@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kdBgMrtnKlqpcW3Ths6qXyZUTlidkzz5xEDvsfQ55WjckbDECbXf7VhRM8dIV1XLGeWQ0BxtljtIjei0qNmZYQ==",
+  "success": true,
+  "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SB\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanArch.Demo.Domain.Core\CleanArch.Demo.Domain.Core.csproj" />
     <ProjectReference Include="..\CleanArch.Demo.Infra.Core\CleanArch.Demo.Infra.Core.csproj" />
     <ProjectReference Include="..\CleanArch.Demo.Shared\CleanArch.Demo.Shared.csproj" />
   </ItemGroup>

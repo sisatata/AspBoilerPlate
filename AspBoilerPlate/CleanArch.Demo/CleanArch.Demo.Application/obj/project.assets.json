@@ -14,6 +14,15 @@
           "lib/netstandard2.0/Dapper.dll": {}
         }
       },
+      "MediatR/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
         "type": "package",
         "compile": {
@@ -328,6 +337,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "CleanArch.Demo.Domain.Core": "1.0.0",
           "CleanArch.Demo.Infra.Core": "1.0.0",
           "CleanArch.Demo.Shared": "1.0.0",
           "Dapper": "2.0.78",
@@ -339,6 +349,19 @@
         },
         "runtime": {
           "bin/placeholder/CleanArch.Demo.Domain.dll": {}
+        }
+      },
+      "CleanArch.Demo.Domain.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
         }
       },
       "CleanArch.Demo.Infra.Core/1.0.0": {
@@ -386,6 +409,24 @@
         "lib/net5.0/Dapper.xml",
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
+    "MediatR/9.0.0": {
+      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "type": "package",
+      "path": "mediatr/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
@@ -1063,6 +1104,11 @@
       "path": "../CleanArch.Demo.Domain/CleanArch.Demo.Domain.csproj",
       "msbuildProject": "../CleanArch.Demo.Domain/CleanArch.Demo.Domain.csproj"
     },
+    "CleanArch.Demo.Domain.Core/1.0.0": {
+      "type": "project",
+      "path": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj",
+      "msbuildProject": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj"
+    },
     "CleanArch.Demo.Infra.Core/1.0.0": {
       "type": "project",
       "path": "../CleanArch.Demo.Infra.Core/CleanArch.Demo.Infra.Core.csproj",
@@ -1088,11 +1134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj",
+      "projectUniqueName": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj",
       "projectName": "CleanArch.Demo.Application",
-      "projectPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj",
+      "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj",
       "packagesPath": "C:\\Users\\SB\\.nuget\\packages\\",
-      "outputPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Application\\obj\\",
+      "outputPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -1114,8 +1160,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj": {
-              "projectPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj"
+            "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj": {
+              "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj"
             }
           }
         }

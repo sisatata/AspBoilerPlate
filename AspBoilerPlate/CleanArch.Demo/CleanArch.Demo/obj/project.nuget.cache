@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ewDOMw7IHLtMl1wOFufazqGbBQoL6J9nfpoyS1UvtoG9cAmzuH0tTGC2YredewxuB+HJszWa2hHUvyXBy9RqyQ==",
+  "dgSpecHash": "2uDLWKUOeMWCliSXQGf2E1o549dKm3ugb5s9tVtsQCCuvTKGAIg/vL1/qGwGjZ1Q6NzHbIwY8Tp0l3rOahNJdg==",
   "success": true,
-  "projectFilePath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo\\CleanArch.Demo.csproj",
+  "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo\\CleanArch.Demo.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

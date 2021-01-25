@@ -115,11 +115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
+      "projectUniqueName": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
       "projectName": "CleanArch.Demo.Shared",
-      "projectPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
+      "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
       "packagesPath": "C:\\Users\\SB\\.nuget\\packages\\",
-      "outputPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\obj\\",
+      "outputPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

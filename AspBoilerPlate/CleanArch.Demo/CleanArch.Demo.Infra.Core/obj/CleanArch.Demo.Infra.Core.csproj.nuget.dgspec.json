@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj": {}
+    "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj": {}
   },
   "projects": {
-    "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj": {
+    "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj",
+        "projectUniqueName": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj",
         "projectName": "CleanArch.Demo.Infra.Core",
-        "projectPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj",
+        "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj",
         "packagesPath": "C:\\Users\\SB\\.nuget\\packages\\",
-        "outputPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\obj\\",
+        "outputPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -33,8 +33,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj": {
-                "projectPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj"
+              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj": {
+                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj"
               }
             }
           }
@@ -73,14 +73,14 @@
         }
       }
     },
-    "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj": {
+    "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
+        "projectUniqueName": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
         "projectName": "CleanArch.Demo.Shared",
-        "projectPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
+        "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
         "packagesPath": "C:\\Users\\SB\\.nuget\\packages\\",
-        "outputPath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\obj\\",
+        "outputPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

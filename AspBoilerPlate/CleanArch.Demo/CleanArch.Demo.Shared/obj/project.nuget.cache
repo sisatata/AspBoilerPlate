@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2nYLG4D7oCUAKxA+UwtSoC+6jNEHVHRLoie2behQxXS2w1Vr24W9yrC2dHV1vDPFcvpp21DCp06R30przqK8xA==",
+  "dgSpecHash": "lanmjjLiSSHssNw7VfY/S01NYRthHFWdo5g+ArwOSjagjVRNKswXc6DM03kaKg6vLUt1GDtha+4R45Hyv6Btfg==",
   "success": true,
-  "projectFilePath": "E:\\PracticeDotNet\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
+  "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Shared\\CleanArch.Demo.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SB\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"

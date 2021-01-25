@@ -1,0 +1,9 @@
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.csprojAssemblyReference.cache
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.AssemblyInfoInputs.cache
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.AssemblyInfo.cs
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.csproj.CoreCompileInputs.cache
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.deps.json
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.pdb
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain.Core\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.pdb
