@@ -1,0 +1,14 @@
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.deps.json
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.dll
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.pdb
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.dll
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.pdb
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.csprojAssemblyReference.cache
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.AssemblyInfoInputs.cache
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.AssemblyInfo.cs
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.csproj.CoreCompileInputs.cache
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.csproj.CopyComplete
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.dll
+E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.pdb

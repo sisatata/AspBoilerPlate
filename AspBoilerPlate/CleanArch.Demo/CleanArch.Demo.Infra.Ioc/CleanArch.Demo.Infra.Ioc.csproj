@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArch.Demo.Application\CleanArch.Demo.Application.csproj" />
+    <ProjectReference Include="..\CleanArch.Demo.Infra.Data\CleanArch.Demo.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
