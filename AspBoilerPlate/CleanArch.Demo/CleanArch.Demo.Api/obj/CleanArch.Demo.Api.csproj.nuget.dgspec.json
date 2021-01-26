@@ -41,6 +41,9 @@
               },
               "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj": {
                 "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj"
+              },
+              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\CleanArch.Demo.Infra.Ioc.csproj": {
+                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\CleanArch.Demo.Infra.Ioc.csproj"
               }
             }
           }
@@ -527,6 +530,85 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\CleanArch.Demo.Infra.Ioc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\CleanArch.Demo.Infra.Ioc.csproj",
+        "projectName": "CleanArch.Demo.Infra.Ioc",
+        "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\CleanArch.Demo.Infra.Ioc.csproj",
+        "packagesPath": "C:\\Users\\SB\\.nuget\\packages\\",
+        "outputPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\SB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj": {
+                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj"
+              },
+              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Bus\\CleanArch.Demo.Infra.Bus.csproj": {
+                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Bus\\CleanArch.Demo.Infra.Bus.csproj"
+              },
+              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj": {
+                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

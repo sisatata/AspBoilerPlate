@@ -4,6 +4,7 @@ using CleanArch.Demo.Application.Services;
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Data.Repository.Course;
+using CleanArch.Demo.Infra.Ioc;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,7 +38,8 @@ namespace CleanArch.Demo.Api
         {
            
             services.AddServices();
-           
+            services.AddOptions();
+
             services.AddDbContext<UniversityDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
@@ -52,6 +54,7 @@ namespace CleanArch.Demo.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArch.Demo.Api", Version = "v1" });
             });
+            RegisterServices(services);
 
            
         }
@@ -76,6 +79,10 @@ namespace CleanArch.Demo.Api
             {
                 endpoints.MapControllers();
             });
+        }
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
     }
 }

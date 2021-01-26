@@ -1,14 +1,13 @@
-﻿using CleanArch.Demo.Shared;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanArch.Demo.Domain.Models
+namespace CleanArch.Demo.Domain.Commands
 {
-   public class Course :BaseEntity<int>
+  public  class CreateCourse  : IRequest<CreateCourse>
     {
-      
+
         public string Name { get; set; }
         public string Description { get; set; }
     }

@@ -158,3 +158,5 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\CleanArch.Demo.Infra.Bus.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\CleanArch.Demo.Infra.Bus.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\CleanArch.Demo.Infra.Ioc.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\CleanArch.Demo.Infra.Ioc.pdb
