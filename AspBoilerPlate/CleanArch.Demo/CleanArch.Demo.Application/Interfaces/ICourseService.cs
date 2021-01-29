@@ -16,7 +16,7 @@ namespace CleanArch.Demo.Application.Interfaces
 
         Task CreateCourse(Course course);
 
-        Task<Course> GetCourseById(int Id);
+        Task<Course> GetCourseById(Guid Id);
 
     }
 }

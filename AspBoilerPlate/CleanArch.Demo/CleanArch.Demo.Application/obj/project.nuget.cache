@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "iMS4Ry44So8dScZSy9ToQ9IUrZ2UOJ1iMuSiuaeWyfZOSqX2u7x1LzX8WXURDpCkSv7fS6tdi4SSNKhQXpNnaQ==",
+  "dgSpecHash": "a1exWUDduh4gN9Vog2wxPBEhlypsAXUUH8LRoOCRO6Xcph4xdnCTDDvZy4AsACD9+jsRtXKFobw+UR32Poa/QQ==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\SB\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\SB\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.2\\microsoft.aspnetcore.cryptography.internal.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.2\\microsoft.aspnetcore.cryptography.keyderivation.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.2\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.2.nupkg.sha512",
+    "C:\\Users\\SB\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.2\\microsoft.entityframeworkcore.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.2\\microsoft.entityframeworkcore.abstractions.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.2\\microsoft.entityframeworkcore.analyzers.5.0.2.nupkg.sha512",
@@ -30,6 +33,7 @@
     "C:\\Users\\SB\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\SB\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],

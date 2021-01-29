@@ -4,6 +4,7 @@ using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.CommnandHandlers;
 using CleanArch.Demo.Domain.Core.Bus;
 using CleanArch.Demo.Domain.Interfaces;
+using CleanArch.Demo.Domain.Models;
 using CleanArch.Demo.Infra.Bus;
 using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
@@ -21,6 +22,7 @@ namespace CleanArch.Demo.Infra.Ioc
     {
         public static void RegisterServices(IServiceCollection services)
         {
+           // services.AddScoped(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository));
             services.AddTransient<IMediatorHandler, InMemoryBus>();
 
             //Domain Handlers

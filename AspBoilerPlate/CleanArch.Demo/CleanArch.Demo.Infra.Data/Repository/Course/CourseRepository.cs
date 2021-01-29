@@ -15,7 +15,7 @@ using Microsoft.Data.SqlClient;
 
 namespace CleanArch.Demo.Infra.Data.Repository.Course
 {
-    public class CourseRepository : EfRepository<Domain.Models.Course,int>, IAsyncCourseRepository<Domain.Models.Course, int> 
+    public class CourseRepository : EfRepository<Domain.Models.Course,Guid>, IAsyncCourseRepository
     {
        
         public CourseRepository(UniversityDBContext universityDBContext) : base(universityDBContext)
@@ -30,7 +30,7 @@ namespace CleanArch.Demo.Infra.Data.Repository.Course
 
         
 
-      public async  Task<Domain.Models.Course> GetCourseById(int Id)
+      public async  Task<Domain.Models.Course> GetCourseById(Guid Id)
         {
            
 

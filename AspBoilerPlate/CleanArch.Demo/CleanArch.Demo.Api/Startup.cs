@@ -1,3 +1,4 @@
+using CleanArch.Demo.Api.Configurations;
 using CleanArch.Demo.Api.ExtensionMethods;
 using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.Services;
@@ -47,13 +48,14 @@ namespace CleanArch.Demo.Api
             /* services.AddTransient<ICourseService, CourseService>();
              services.AddTransient<IAsyncCourseRepository<Domain.Models.Course, int>, CourseRepository<Domain.Models.Course, int>>();
  */
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
+         //   services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
             services.AddControllers();
             services.AddMemoryCache();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArch.Demo.Api", Version = "v1" });
             });
+            services.RegisterAutoMapper();
             RegisterServices(services);
 
            

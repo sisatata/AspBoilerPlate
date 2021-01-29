@@ -22,9 +22,9 @@ namespace CleanArch.Demo.Api.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
 
         private readonly ICourseService _courseService;
-        private readonly IAsyncCourseRepository<Course, int> _courseRepository;
+        private readonly IAsyncCourseRepository _courseRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ICourseService courseService  , IAsyncCourseRepository<Course, int> courseRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ICourseService courseService  , IAsyncCourseRepository courseRepository)
 
         {
             _logger = logger;
@@ -55,7 +55,7 @@ namespace CleanArch.Demo.Api.Controllers
 
         [HttpGet("{Id}")]
 
-        public async Task<IActionResult> GetCourseById(int Id)
+        public async Task<IActionResult> GetCourseById(Guid Id)
         {
             var data = await _courseService.GetCourseById(Id);
             return Ok(data);

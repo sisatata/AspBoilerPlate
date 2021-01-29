@@ -1,4 +1,5 @@
-﻿using CleanArch.Demo.Application.Interfaces;
+﻿using AutoMapper;
+using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.Core.Bus;
@@ -13,14 +14,15 @@ namespace CleanArch.Demo.Application.Services
 {
   public  class CourseService: ICourseService
     {
-        private readonly IAsyncCourseRepository<Domain.Models.Course,int> _courseRepository;
+        private readonly IAsyncCourseRepository _courseRepository;
         private readonly IMediatorHandler _bus;
-
-          public CourseService(IAsyncCourseRepository<Domain.Models.Course, int> courseRepository, IMediatorHandler bus)
+        private readonly IMapper _autoMapper;
+          public CourseService(IAsyncCourseRepository courseRepository, IMediatorHandler bus, IMapper autoMapper)
         {
             _courseRepository = courseRepository;
             _bus = bus;
-        }
+            _autoMapper = autoMapper;
+        }  
 
         public async  Task<CourseViewModel> GetCourses()
         {
@@ -32,15 +34,16 @@ namespace CleanArch.Demo.Application.Services
         public async Task CreateCourse(Course course)
         {
             //await _courseRepository.CreateCourse(course);
-            var createCourseCommand = new CreateCourseCommand(
+          /*  var createCourseCommand = new CreateCourseCommand(
                   course.Name,
                   course.Description
-                );
-            await _bus.SendCommand(createCourseCommand);
+                );*/
+
+            await _bus.SendCommand(_autoMapper.Map<CreateCourseCommand>(course));
             
         }
 
-        public  async Task<Course> GetCourseById(int Id)
+        public  async Task<Course> GetCourseById(Guid Id)
         {
             return await _courseRepository.GetCourseById(Id);
         }

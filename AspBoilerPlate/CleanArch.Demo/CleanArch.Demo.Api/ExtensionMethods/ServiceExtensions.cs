@@ -4,12 +4,14 @@ using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.CommnandHandlers;
 using CleanArch.Demo.Domain.Core.Bus;
 using CleanArch.Demo.Domain.Interfaces;
+using CleanArch.Demo.Domain.Models;
 using CleanArch.Demo.Infra.Bus;
 using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Repository;
 using CleanArch.Demo.Infra.Data.Repository.Course;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Reflection;
 
 namespace CleanArch.Demo.Api.ExtensionMethods
@@ -29,7 +31,10 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             // services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped(typeof(IAsyncRepository<,>), typeof(EfRepository<,>));
             // services.AddTransient<ICourseService, CourseService>();
-            services.AddScoped(typeof(IAsyncCourseRepository<Domain.Models.Course, int>), typeof(CourseRepository));
+           // services.AddScoped(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository));
+
+           // services.Add(new ServiceDescriptor(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository)));
+            services.AddScoped<IAsyncCourseRepository, CourseRepository>();
         }
     }
 };

@@ -1,4 +1,5 @@
-﻿using CleanArch.Demo.Domain.Commands;
+﻿using AutoMapper;
+using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
 using MediatR;
@@ -12,23 +13,24 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
 {
     public class CourseCommandHandler : IRequestHandler<CreateCourseCommand, bool>
     {
-        private readonly IAsyncCourseRepository<Course, int> _courseRepository;
-
-        public CourseCommandHandler(IAsyncCourseRepository<Course, int> courseRepository)
+        private readonly IAsyncCourseRepository _courseRepository;
+        private readonly IMapper _autoMapper;
+        public CourseCommandHandler(IAsyncCourseRepository courseRepository, IMapper autoMapper)
         {
             _courseRepository = courseRepository;
+            _autoMapper = autoMapper;
         }
 
         public async Task<bool> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
         {
-            var course = new Course()
+            /*var course = new Course()
             {
                 Name = request.Name,
                 Description = request.Description
-            };
+            };*/
 
 
-            await _courseRepository.AddAsync(course);
+            await _courseRepository.AddAsync(_autoMapper.Map<Course>(request));
             return await Task.FromResult(true);
 
 
