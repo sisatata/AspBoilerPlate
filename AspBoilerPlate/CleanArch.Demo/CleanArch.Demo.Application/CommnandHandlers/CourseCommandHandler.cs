@@ -13,9 +13,9 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
 {
     public class CourseCommandHandler : IRequestHandler<CreateCourseCommand, bool>
     {
-        private readonly IAsyncCourseRepository _courseRepository;
+        private readonly ICourseRepository _courseRepository;
         private readonly IMapper _autoMapper;
-        public CourseCommandHandler(IAsyncCourseRepository courseRepository, IMapper autoMapper)
+        public CourseCommandHandler(ICourseRepository courseRepository, IMapper autoMapper)
         {
             _courseRepository = courseRepository;
             _autoMapper = autoMapper;
@@ -23,13 +23,7 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
 
         public async Task<bool> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
         {
-            /*var course = new Course()
-            {
-                Name = request.Name,
-                Description = request.Description
-            };*/
-
-
+            
             await _courseRepository.AddAsync(_autoMapper.Map<Course>(request));
             return await Task.FromResult(true);
 

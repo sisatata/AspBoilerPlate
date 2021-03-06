@@ -40,7 +40,7 @@ namespace CleanArch.Demo.Api
            
             services.AddServices();
             services.AddOptions();
-
+            services.AddMemoryCache();
             services.AddDbContext<UniversityDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));

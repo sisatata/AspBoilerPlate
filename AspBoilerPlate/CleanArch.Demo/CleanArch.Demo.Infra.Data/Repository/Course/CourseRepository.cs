@@ -15,11 +15,12 @@ using Microsoft.Data.SqlClient;
 
 namespace CleanArch.Demo.Infra.Data.Repository.Course
 {
-    public class CourseRepository : EfRepository<Domain.Models.Course,Guid>, IAsyncCourseRepository
+    public class CourseRepository : EfRepository<Domain.Models.Course,Guid>, ICourseRepository
     {
        
         public CourseRepository(UniversityDBContext universityDBContext) : base(universityDBContext)
         {
+           
         }
 
 
@@ -48,6 +49,7 @@ namespace CleanArch.Demo.Infra.Data.Repository.Course
         {
             await _universityDBContext.AddAsync(entity);
             await _universityDBContext.SaveChangesAsync();
+          
 
         }
 

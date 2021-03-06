@@ -15,8 +15,10 @@ E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.deps.json
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.pdb
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.csprojAssemblyReference.cache
@@ -26,5 +28,3 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.csproj.CopyComplete
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\obj\Debug\netstandard2.1\CleanArch.Demo.Domain.pdb
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.dll
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Domain\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.pdb

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Domain.Interfaces
 {
-    public interface IAsyncCourseRepository : IAsyncRepository<Course, Guid> 
+    public interface ICourseRepository : IAsyncRepository<Course, Guid> 
     {
         
         Task CreateCourse(Course entity);

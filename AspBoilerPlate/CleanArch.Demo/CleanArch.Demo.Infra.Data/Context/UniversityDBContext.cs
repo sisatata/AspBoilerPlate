@@ -1,4 +1,5 @@
-﻿using CleanArch.Demo.Domain.Models;
+﻿using CleanArch.Demo.Domain.Interfaces;
+using CleanArch.Demo.Domain.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace CleanArch.Demo.Infra.Data.Context
 {
-   public class UniversityDBContext : DbContext
+   public class UniversityDBContext : IdentityDbContext<ApplicationUser>
     {
         public UniversityDBContext(DbContextOptions<UniversityDBContext> options) : base(options)
         {
@@ -15,9 +16,10 @@ namespace CleanArch.Demo.Infra.Data.Context
 
        // public  DbSet<Course> Courses { get; set; }
         public DbSet<Course> Courses { get; set; }
-        // ApplicationUser Course
+        // ApplicationUser Course UserProfile
 
-        // public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+         public DbSet<User> Users { get; set; }
 
     }
 }

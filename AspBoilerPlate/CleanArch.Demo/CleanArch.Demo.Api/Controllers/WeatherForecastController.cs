@@ -22,9 +22,9 @@ namespace CleanArch.Demo.Api.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
 
         private readonly ICourseService _courseService;
-        private readonly IAsyncCourseRepository _courseRepository;
+        private readonly ICourseRepository _courseRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ICourseService courseService  , IAsyncCourseRepository courseRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ICourseService courseService  , ICourseRepository courseRepository)
 
         {
             _logger = logger;

@@ -7,7 +7,7 @@ namespace CleanArch.Demo.Shared
     public abstract class BaseEntity<TId>
     {
         public TId Id { get; protected set; }
-       
+        public DateTime CreatedTime { get; protected set; }
 
         protected BaseEntity(TId id)
         {
@@ -16,8 +16,11 @@ namespace CleanArch.Demo.Shared
                 throw new ArgumentException("The ID cannot be the type's default value.", "id");
             }
             Id = id;
+            
         }
 
-        protected BaseEntity() { }
+        protected BaseEntity() {
+            CreatedTime = DateTime.Now;
+        }
     }
 }
