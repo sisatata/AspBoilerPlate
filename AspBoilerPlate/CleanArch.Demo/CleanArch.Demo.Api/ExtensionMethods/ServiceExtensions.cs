@@ -1,12 +1,11 @@
 ﻿
+using CleanArch.Demo.Application.Commands.Model;
 using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.Services;
 using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.CommnandHandlers;
-using CleanArch.Demo.Domain.Core.Bus;
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
-using CleanArch.Demo.Infra.Bus;
 using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Data.Repository;
@@ -30,7 +29,6 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             services.AddMediatR(Assembly.GetExecutingAssembly());
             // services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
             //services.AddSingleton<IMediatorHandler, InMemoryBus>();
-            services.AddScoped(typeof(IMediatorHandler), typeof(InMemoryBus));
             services.Configure<IdentityOptions>(opt =>
             {
                 opt.Password.RequiredLength = 5;
@@ -39,7 +37,7 @@ namespace CleanArch.Demo.Api.ExtensionMethods
                 opt.Lockout.MaxFailedAccessAttempts = 3;
             });
             //Domain Handlers
-            services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
+            services.AddScoped<IRequestHandler<CreateCourseCommand, CommonResponseDto>, CourseCommandHandler>();
            
             services.AddScoped(typeof(ICourseService), typeof(CourseService));
           

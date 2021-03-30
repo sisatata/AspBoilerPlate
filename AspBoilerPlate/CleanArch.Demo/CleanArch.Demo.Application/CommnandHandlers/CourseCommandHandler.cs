@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Domain.CommnandHandlers
 {
-    public class CourseCommandHandler : IRequestHandler<CreateCourseCommand, bool>
+    public class CourseCommandHandler : IRequestHandler<CreateCourseCommand, CommonResponseDto>
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IMapper _autoMapper;
@@ -22,15 +22,21 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
             _autoMapper = autoMapper;
         }
 
-        public async Task<bool> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
+        public async Task<CommonResponseDto> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
         {
-            
+            var commonResponseDto = new CommonResponseDto
+            {
+                Status = false,
+                Message = "Failed"
+            };
             try
             {
+                Course course = new Course();
                 var result =  await _courseRepository.AddAsync(_autoMapper.Map<Course>(request));
-
-                return true; ;
-
+                commonResponseDto.ApplicationId = result.Id;
+                commonResponseDto.Status = true;
+                commonResponseDto.Message = "Entity Successfully Created";
+                return commonResponseDto;
             }
             catch(Exception ex)
             {

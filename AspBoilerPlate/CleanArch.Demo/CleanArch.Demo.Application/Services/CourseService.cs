@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using CleanArch.Demo.Application.Commands.Model;
 using CleanArch.Demo.Application.Interfaces;
-using CleanArch.Demo.Application.Queries.Course.Model;
+using CleanArch.Demo.Application.Queries.CourseQuery.Model;
 using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Domain.Commands;
-using CleanArch.Demo.Domain.Core.Bus;
+
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
 using MediatR;
@@ -19,15 +19,15 @@ namespace CleanArch.Demo.Application.Services
     public class CourseService : ICourseService
     {
         private readonly ICourseRepository _courseRepository;
-        private readonly IMediatorHandler _bus;
+  
         private readonly IMapper _autoMapper;
         private readonly IMemoryCache _memoryCache;
         private readonly IMediator _mediator;
         public Course list;
-        public CourseService(ICourseRepository courseRepository, IMediatorHandler bus, IMapper autoMapper, IMemoryCache memoryCache, IMediator mediator)
+        public CourseService(ICourseRepository courseRepository,  IMapper autoMapper, IMemoryCache memoryCache, IMediator mediator)
         {
             _courseRepository = courseRepository;
-            _bus = bus;
+         
             _autoMapper = autoMapper;
             _memoryCache = memoryCache;
             _mediator = mediator;
@@ -70,14 +70,10 @@ namespace CleanArch.Demo.Application.Services
 
                return _memoryCache.Get<Course>(Id);*/
 
-            return await _mediator.Send(new Queries.Course.GetCoursesQuery { Id = Id });
+            return await _mediator.Send(new Queries.CourseQuery.GetCoursesQuery { Id = Id });
 
         }
 
-
-
-
-
-
+        
     }
 }

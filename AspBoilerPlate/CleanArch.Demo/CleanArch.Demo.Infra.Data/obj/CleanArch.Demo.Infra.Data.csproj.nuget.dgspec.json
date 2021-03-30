@@ -4,71 +4,6 @@
     "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj": {}
   },
   "projects": {
-    "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj",
-        "projectName": "CleanArch.Demo.Domain.Core",
-        "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj",
-        "packagesPath": "C:\\Users\\SB\\.nuget\\packages\\",
-        "outputPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\SB\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
-          "dependencies": {
-            "MediatR": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "NETStandard.Library": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -98,9 +33,6 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj": {
-                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj"
-              },
               "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj": {
                 "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj"
               },

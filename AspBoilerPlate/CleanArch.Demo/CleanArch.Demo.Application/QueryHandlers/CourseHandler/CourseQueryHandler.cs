@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using CleanArch.Demo.Application.Queries.Course;
-using CleanArch.Demo.Application.Queries.Course.Model;
+using CleanArch.Demo.Application.Queries.CourseQuery;
+using CleanArch.Demo.Application.Queries.CourseQuery.Model;
 using CleanArch.Demo.Domain.Interfaces;
 using MediatR;
 using System;
@@ -8,8 +8,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using CleanArch.Demo.Domain.Models;
 
-namespace CleanArch.Demo.Application.QueryHandlers.Course
+namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
 {
     public class CourseQueryHandler : IRequestHandler<GetCoursesQuery, CourseDto>
     {
@@ -22,14 +23,9 @@ namespace CleanArch.Demo.Application.QueryHandlers.Course
         }
         public async Task<CourseDto> Handle(GetCoursesQuery request, CancellationToken cancellationToken)
         {
-            var result = await _courseRepository.GetByIdAsync(request.Id);
-            CourseDto courseDto = new CourseDto
-            {
-                Name = result.Name,
-                Description = result.Description
-            };
-            return courseDto;
            
+            var result = await _courseRepository.GetByIdAsync(request.Id);
+            return _autoMapper.Map<CourseDto>(result);
 
         }
     }

@@ -17,12 +17,10 @@ E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Application\obj\Debug\netstandar
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Application.deps.json
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Application.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Application.pdb
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.pdb
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.Core.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\obj\Debug\netstandard2.1\CleanArch.Demo.Application.csprojAssemblyReference.cache

@@ -13,28 +13,29 @@ namespace CleanArch.Demo.Api.Controllers
     [Route("Api/[controller]")]
 
     [ApiController]
-    public class CourseController : ControllerBase
+    public class CourseController : BaseController<CourseController>
     {
         #region properties
         private readonly ICourseService _courseService;
-        private readonly IMediator _mediator;
+        
         #endregion
         #region ctor
         public CourseController(ICourseService courseService, IMediator mediator)
         {
             _courseService = courseService;
-            _mediator = mediator;
+           
         }
         #endregion
         #region methods
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Course course)
         {
-           // var now = new CreateCourseCommand(course.Name, course.Description);
-           await _courseService.CreateCourse(course);
-            //await _mediator.Send(now);
+            // var now = new CreateCourseCommand(course.Name, course.Description);
+            // await _courseService.CreateCourse(course);
+            //  //await _mediator.Send(now);
+          var data =   await _mediator.Send(new CreateCourseCommand { Description = course.Description, Name = course.Name });
 
-            return Ok(true);
+            return Ok(data);
         }
         #endregion
     }

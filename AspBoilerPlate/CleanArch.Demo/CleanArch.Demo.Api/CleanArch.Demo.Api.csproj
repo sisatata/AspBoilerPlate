@@ -16,12 +16,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArch.Demo.Application\CleanArch.Demo.Application.csproj" />
-    <ProjectReference Include="..\CleanArch.Demo.Infra.Bus\CleanArch.Demo.Infra.Bus.csproj" />
     <ProjectReference Include="..\CleanArch.Demo.Infra.Data\CleanArch.Demo.Infra.Data.csproj" />
     <ProjectReference Include="..\CleanArch.Demo.Infra.Ioc\CleanArch.Demo.Infra.Ioc.csproj" />
   </ItemGroup>

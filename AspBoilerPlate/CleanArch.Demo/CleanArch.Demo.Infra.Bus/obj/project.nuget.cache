@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UehcVNl4MUIHWC8WsIqd4kHbOiVsp8gs98kLu0SPgjlKEfVYxUtaOLH+2ASUlBoOmYSvESjUAfTpYhByEqJaXA==",
+  "dgSpecHash": "TM5PKzX7+PbRVcXJDt85/RCelwSq+n9tE+oa19OhaREesqBN56kUdp6prBCBOkVoqFdFebzA2HwjkT5T9Ohplw==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Bus\\CleanArch.Demo.Infra.Bus.csproj",
   "expectedPackageFiles": [

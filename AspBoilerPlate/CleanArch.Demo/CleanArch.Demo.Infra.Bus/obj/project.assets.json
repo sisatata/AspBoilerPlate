@@ -409,6 +409,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "CleanArch.Demo.Domain": "1.0.0",
           "Dapper": "2.0.78",
+          "MediatR": "9.0.0",
           "Microsoft.AspNetCore.Authorization": "5.0.4"
         },
         "compile": {
@@ -423,7 +424,6 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "CleanArch.Demo.Domain.Core": "1.0.0",
           "CleanArch.Demo.Infra.Core": "1.0.0",
           "CleanArch.Demo.Shared": "1.0.0",
           "Dapper": "2.0.78",
@@ -435,19 +435,6 @@
         },
         "runtime": {
           "bin/placeholder/CleanArch.Demo.Domain.dll": {}
-        }
-      },
-      "CleanArch.Demo.Domain.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "MediatR": "9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
         }
       },
       "CleanArch.Demo.Infra.Core/1.0.0": {
@@ -1385,11 +1372,6 @@
       "path": "../CleanArch.Demo.Domain/CleanArch.Demo.Domain.csproj",
       "msbuildProject": "../CleanArch.Demo.Domain/CleanArch.Demo.Domain.csproj"
     },
-    "CleanArch.Demo.Domain.Core/1.0.0": {
-      "type": "project",
-      "path": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj",
-      "msbuildProject": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj"
-    },
     "CleanArch.Demo.Infra.Core/1.0.0": {
       "type": "project",
       "path": "../CleanArch.Demo.Infra.Core/CleanArch.Demo.Infra.Core.csproj",
@@ -1404,7 +1386,6 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "CleanArch.Demo.Application >= 1.0.0",
-      "CleanArch.Demo.Domain.Core >= 1.0.0",
       "MediatR >= 9.0.0"
     ]
   },
@@ -1444,9 +1425,6 @@
           "projectReferences": {
             "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj": {
               "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj"
-            },
-            "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj": {
-              "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj"
             }
           }
         }

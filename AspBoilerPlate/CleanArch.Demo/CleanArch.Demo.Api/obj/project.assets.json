@@ -1726,6 +1726,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "CleanArch.Demo.Domain": "1.0.0",
           "Dapper": "2.0.78",
+          "MediatR": "9.0.0",
           "Microsoft.AspNetCore.Authorization": "5.0.4"
         },
         "compile": {
@@ -1740,7 +1741,6 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "CleanArch.Demo.Domain.Core": "1.0.0",
           "CleanArch.Demo.Infra.Core": "1.0.0",
           "CleanArch.Demo.Shared": "1.0.0",
           "Dapper": "2.0.78",
@@ -1752,34 +1752,6 @@
         },
         "runtime": {
           "bin/placeholder/CleanArch.Demo.Domain.dll": {}
-        }
-      },
-      "CleanArch.Demo.Domain.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "MediatR": "9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
-        }
-      },
-      "CleanArch.Demo.Infra.Bus/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "CleanArch.Demo.Application": "1.0.0",
-          "CleanArch.Demo.Domain.Core": "1.0.0",
-          "MediatR": "9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CleanArch.Demo.Infra.Bus.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CleanArch.Demo.Infra.Bus.dll": {}
         }
       },
       "CleanArch.Demo.Infra.Core/1.0.0": {
@@ -1819,7 +1791,6 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "CleanArch.Demo.Application": "1.0.0",
-          "CleanArch.Demo.Infra.Bus": "1.0.0",
           "CleanArch.Demo.Infra.Data": "1.0.0",
           "Dapper": "2.0.78",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
@@ -6431,16 +6402,6 @@
       "path": "../CleanArch.Demo.Domain/CleanArch.Demo.Domain.csproj",
       "msbuildProject": "../CleanArch.Demo.Domain/CleanArch.Demo.Domain.csproj"
     },
-    "CleanArch.Demo.Domain.Core/1.0.0": {
-      "type": "project",
-      "path": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj",
-      "msbuildProject": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj"
-    },
-    "CleanArch.Demo.Infra.Bus/1.0.0": {
-      "type": "project",
-      "path": "../CleanArch.Demo.Infra.Bus/CleanArch.Demo.Infra.Bus.csproj",
-      "msbuildProject": "../CleanArch.Demo.Infra.Bus/CleanArch.Demo.Infra.Bus.csproj"
-    },
     "CleanArch.Demo.Infra.Core/1.0.0": {
       "type": "project",
       "path": "../CleanArch.Demo.Infra.Core/CleanArch.Demo.Infra.Core.csproj",
@@ -6466,12 +6427,12 @@
     "net5.0": [
       "AutoMapper >= 10.1.1",
       "CleanArch.Demo.Application >= 1.0.0",
-      "CleanArch.Demo.Infra.Bus >= 1.0.0",
       "CleanArch.Demo.Infra.Data >= 1.0.0",
       "CleanArch.Demo.Infra.Ioc >= 1.0.0",
       "Dapper >= 2.0.78",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.2",
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 5.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -6512,9 +6473,6 @@
             "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj": {
               "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj"
             },
-            "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Bus\\CleanArch.Demo.Infra.Bus.csproj": {
-              "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Bus\\CleanArch.Demo.Infra.Bus.csproj"
-            },
             "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj": {
               "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj"
             },
@@ -6551,6 +6509,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "Microsoft.Extensions.DependencyInjection.Abstractions": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

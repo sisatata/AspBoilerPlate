@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gU9tiEJjSS/1XKRMd7mhtK+yfZN4lkdMhf+iIG9r9/esFYIjk2/blGPBgT7WfkFZYzV9OY256ilHHuW502qX0Q==",
+  "dgSpecHash": "KhAVEq3dIldyvDJDHmAFR64gMnsxWGmBw8r7K1nfRSpygeM2/UFPVGsRS84ZxZfuBJprG83KJvRmNA74b6+BmA==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Ioc\\CleanArch.Demo.Infra.Ioc.csproj",
   "expectedPackageFiles": [

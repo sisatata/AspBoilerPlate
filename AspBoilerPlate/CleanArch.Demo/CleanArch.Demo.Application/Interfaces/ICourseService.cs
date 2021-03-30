@@ -1,5 +1,5 @@
 ﻿using CleanArch.Demo.Application.Commands.Model;
-using CleanArch.Demo.Application.Queries.Course.Model;
+using CleanArch.Demo.Application.Queries.CourseQuery.Model;
 using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;

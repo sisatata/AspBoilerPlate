@@ -10,9 +10,9 @@ E:\PracticeDotNet\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.deps.json
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.csprojAssemblyReference.cache
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.AssemblyInfoInputs.cache
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.AssemblyInfo.cs
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.csproj.CoreCompileInputs.cache
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.csprojAssemblyReference.cache

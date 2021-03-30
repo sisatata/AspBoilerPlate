@@ -27,15 +27,6 @@
           "lib/netstandard2.0/Dapper.dll": {}
         }
       },
-      "MediatR/9.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/MediatR.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/MediatR.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
         "type": "package",
         "compile": {
@@ -364,19 +355,6 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "CleanArch.Demo.Domain.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "MediatR": "9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CleanArch.Demo.Domain.Core.dll": {}
-        }
-      },
       "CleanArch.Demo.Infra.Core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -438,24 +416,6 @@
         "lib/net5.0/Dapper.xml",
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml"
-      ]
-    },
-    "MediatR/9.0.0": {
-      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
-      "type": "package",
-      "path": "mediatr/9.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gradient_128x128.png",
-        "lib/net461/MediatR.dll",
-        "lib/net461/MediatR.xml",
-        "lib/netstandard2.0/MediatR.dll",
-        "lib/netstandard2.0/MediatR.xml",
-        "lib/netstandard2.1/MediatR.dll",
-        "lib/netstandard2.1/MediatR.xml",
-        "mediatr.9.0.0.nupkg.sha512",
-        "mediatr.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
@@ -1251,11 +1211,6 @@
         "version.txt"
       ]
     },
-    "CleanArch.Demo.Domain.Core/1.0.0": {
-      "type": "project",
-      "path": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj",
-      "msbuildProject": "../CleanArch.Demo.Domain.Core/CleanArch.Demo.Domain.Core.csproj"
-    },
     "CleanArch.Demo.Infra.Core/1.0.0": {
       "type": "project",
       "path": "../CleanArch.Demo.Infra.Core/CleanArch.Demo.Infra.Core.csproj",
@@ -1270,7 +1225,6 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "AutoMapper >= 10.1.1",
-      "CleanArch.Demo.Domain.Core >= 1.0.0",
       "CleanArch.Demo.Infra.Core >= 1.0.0",
       "CleanArch.Demo.Shared >= 1.0.0",
       "Dapper >= 2.0.78",
@@ -1312,9 +1266,6 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj": {
-              "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain.Core\\CleanArch.Demo.Domain.Core.csproj"
-            },
             "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj": {
               "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj"
             },

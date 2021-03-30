@@ -10,7 +10,6 @@
       "CleanArch.Demo.Domain/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "CleanArch.Demo.Domain.Core": "1.0.0",
           "CleanArch.Demo.Infra.Core": "1.0.0",
           "CleanArch.Demo.Shared": "1.0.0",
           "Dapper": "2.0.78",
@@ -41,14 +40,6 @@
           "lib/netstandard2.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.78.45418"
-          }
-        }
-      },
-      "MediatR/9.0.0": {
-        "runtime": {
-          "lib/netstandard2.1/MediatR.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.0.0"
           }
         }
       },
@@ -331,14 +322,6 @@
           }
         }
       },
-      "CleanArch.Demo.Domain.Core/1.0.0": {
-        "dependencies": {
-          "MediatR": "9.0.0"
-        },
-        "runtime": {
-          "CleanArch.Demo.Domain.Core.dll": {}
-        }
-      },
       "CleanArch.Demo.Infra.Core/1.0.0": {
         "dependencies": {
           "CleanArch.Demo.Shared": "1.0.0",
@@ -377,13 +360,6 @@
       "sha512": "sha512-vLPwL2HZXp/DN17Eu7sg6GMEj02alq7jcy6atn5Gv8i96b9Hu1UoxlCrhInUPfSFLQQiD8O7pdWAE1fdUEO/1Q==",
       "path": "dapper/2.0.78",
       "hashPath": "dapper.2.0.78.nupkg.sha512"
-    },
-    "MediatR/9.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
-      "path": "mediatr/9.0.0",
-      "hashPath": "mediatr.9.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
       "type": "package",
@@ -580,11 +556,6 @@
       "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
       "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
-    },
-    "CleanArch.Demo.Domain.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "CleanArch.Demo.Infra.Core/1.0.0": {
       "type": "project",
