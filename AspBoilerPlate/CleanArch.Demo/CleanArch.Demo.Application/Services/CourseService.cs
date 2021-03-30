@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using CleanArch.Demo.Application.Commands.Model;
 using CleanArch.Demo.Application.Interfaces;
+using CleanArch.Demo.Application.Queries.Course.Model;
 using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.Core.Bus;
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
+using MediatR;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
@@ -19,13 +22,15 @@ namespace CleanArch.Demo.Application.Services
         private readonly IMediatorHandler _bus;
         private readonly IMapper _autoMapper;
         private readonly IMemoryCache _memoryCache;
+        private readonly IMediator _mediator;
         public Course list;
-        public CourseService(ICourseRepository courseRepository, IMediatorHandler bus, IMapper autoMapper, IMemoryCache memoryCache)
+        public CourseService(ICourseRepository courseRepository, IMediatorHandler bus, IMapper autoMapper, IMemoryCache memoryCache, IMediator mediator)
         {
             _courseRepository = courseRepository;
             _bus = bus;
             _autoMapper = autoMapper;
             _memoryCache = memoryCache;
+            _mediator = mediator;
         }
 
         public async Task<CourseViewModel> GetCourses()
@@ -43,25 +48,30 @@ namespace CleanArch.Demo.Application.Services
                     course.Description
                   );*/
 
-            await _bus.SendCommand(_autoMapper.Map<CreateCourseCommand>(course));
+            //  await _bus.SendCommand(_autoMapper.Map<CreateCourseCommand>(course));
+            await _mediator.Send(new CreateCourseCommand { Description = course.Description, Name=course.Name });
 
+          
         }
 
-        public async Task<Course> GetCourseById(Guid Id)
+        public async Task<CourseDto> GetCourseById(Guid Id)
         {
-         
-            if (!_memoryCache.TryGetValue(Id, out Course course))
-            {
-                 list = await _courseRepository.GetCourseById(Id);
-                var cahceExpirationOption = new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpiration = DateTime.Now.AddHours(6)
+            /*
+               if (!_memoryCache.TryGetValue(Id, out Course course))
+               {
+                    list = await _courseRepository.GetCourseById(Id);
+                   var cahceExpirationOption = new MemoryCacheEntryOptions
+                   {
+                       AbsoluteExpiration = DateTime.Now.AddHours(6)
 
-                };
-                _memoryCache.Set(Id, list, cahceExpirationOption);
-            }
+                   };
+                   _memoryCache.Set(Id, list, cahceExpirationOption);
+               }
 
-            return _memoryCache.Get<Course>(Id);
+               return _memoryCache.Get<Course>(Id);*/
+
+            return await _mediator.Send(new Queries.Course.GetCoursesQuery { Id = Id });
+
         }
 
 

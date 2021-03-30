@@ -8,6 +8,6 @@ namespace CleanArch.Demo.Domain.Core.Bus
 {
      public interface IMediatorHandler
     {
-        Task SendCommand<T>(T command) where T : Command;
+        Task SendCommand<T>(T command);
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r9r9aWu+Yk9SELV3ZcsDvlx/bdpfEwzOftYiycu4e521dm2eQFbaoTcJV3cNMCoLoZE8piZKiIyfqAY17eAYSw==",
+  "dgSpecHash": "tOSMmBx33+9lXldRr7LMHip9UvtWKHp2peVYjfeaGgIA/1NBr/B1UsyuuqNKArx6kYpJYTNqq04Ig9BqlRtfxw==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Api\\CleanArch.Demo.Api.csproj",
   "expectedPackageFiles": [
@@ -10,9 +10,11 @@
     "C:\\Users\\SB\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.4\\microsoft.aspnetcore.authorization.5.0.4.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.2\\microsoft.aspnetcore.cryptography.internal.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.2\\microsoft.aspnetcore.cryptography.keyderivation.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.2\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.2.nupkg.sha512",
+    "C:\\Users\\SB\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.4\\microsoft.aspnetcore.metadata.5.0.4.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

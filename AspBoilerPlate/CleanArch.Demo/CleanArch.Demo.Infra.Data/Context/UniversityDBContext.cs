@@ -19,7 +19,7 @@ namespace CleanArch.Demo.Infra.Data.Context
         // ApplicationUser Course UserProfile
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-         public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

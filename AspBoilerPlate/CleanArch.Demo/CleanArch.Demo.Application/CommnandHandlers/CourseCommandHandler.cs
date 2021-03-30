@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CleanArch.Demo.Application.Commands.Model;
 using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
@@ -24,8 +25,17 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
         public async Task<bool> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
         {
             
-            await _courseRepository.AddAsync(_autoMapper.Map<Course>(request));
-            return await Task.FromResult(true);
+            try
+            {
+                var result =  await _courseRepository.AddAsync(_autoMapper.Map<Course>(request));
+
+                return true; ;
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
 
         }

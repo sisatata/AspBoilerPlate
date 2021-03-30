@@ -1,4 +1,5 @@
-﻿using CleanArch.Demo.Application.Interfaces;
+﻿using CleanArch.Demo.Application.Commands.Model;
+using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.Services;
 using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.CommnandHandlers;

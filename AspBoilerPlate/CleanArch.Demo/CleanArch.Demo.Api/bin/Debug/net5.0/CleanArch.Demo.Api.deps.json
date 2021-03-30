@@ -40,7 +40,6 @@
           "Microsoft.AspNetCore.Authentication.Core": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.OAuth": "5.0.0.0",
-          "Microsoft.AspNetCore.Authorization": "5.0.0.0",
           "Microsoft.AspNetCore.Authorization.Policy": "5.0.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "5.0.0.0",
           "Microsoft.AspNetCore.Components": "5.0.0.0",
@@ -73,7 +72,6 @@
           "Microsoft.AspNetCore.Identity": "5.0.0.0",
           "Microsoft.AspNetCore.Localization": "5.0.0.0",
           "Microsoft.AspNetCore.Localization.Routing": "5.0.0.0",
-          "Microsoft.AspNetCore.Metadata": "5.0.0.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Mvc.ApiExplorer": "5.0.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "5.0.0.0",
@@ -395,6 +393,22 @@
           "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authorization/5.0.4": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Metadata": "5.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authorization.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.421.11815"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authorization.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
         "runtime": {
           "lib/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -433,6 +447,17 @@
         },
         "compile": {
           "lib/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Metadata/5.0.4": {
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Metadata.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.421.11815"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Metadata.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -1498,7 +1523,8 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "CleanArch.Demo.Domain": "1.0.0",
-          "Dapper": "2.0.78"
+          "Dapper": "2.0.78",
+          "Microsoft.AspNetCore.Authorization": "5.0.4"
         },
         "runtime": {
           "CleanArch.Demo.Application.dll": {}
@@ -1537,6 +1563,7 @@
       },
       "CleanArch.Demo.Infra.Bus/1.0.0": {
         "dependencies": {
+          "CleanArch.Demo.Application": "1.0.0",
           "CleanArch.Demo.Domain.Core": "1.0.0",
           "MediatR": "9.0.0"
         },
@@ -1634,12 +1661,6 @@
       "Microsoft.AspNetCore.Authentication.OAuth/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Authentication.OAuth.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Authorization/5.0.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Authorization.dll": {}
         },
         "compileOnly": true
       },
@@ -1832,12 +1853,6 @@
       "Microsoft.AspNetCore.Localization.Routing/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Localization.Routing.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Metadata/5.0.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Metadata.dll": {}
         },
         "compileOnly": true
       },
@@ -3313,6 +3328,13 @@
       "path": "mediatr.extensions.microsoft.dependencyinjection/9.0.0",
       "hashPath": "mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Authorization/5.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Dwzl3JvBpPo6kkw8uZ+I/s7qzUDZ9YeGkLecFKevfk69YoKN945VfLREV06fJnINaC/cGkPy7cd/mvMyiyaQ0w==",
+      "path": "microsoft.aspnetcore.authorization/5.0.4",
+      "hashPath": "microsoft.aspnetcore.authorization.5.0.4.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.2": {
       "type": "package",
       "serviceable": true,
@@ -3333,6 +3355,13 @@
       "sha512": "sha512-IgqlEOIEFHAAVivQKRkimdTMdCkJIP3gEQ7NMefvFvGvVE7S7yKkrh7H/nP4trkaIevjjna8vTwIoD74+eSsuQ==",
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/5.0.2",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.5.0.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Metadata/5.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G5XkoTq4fj/zPUh/DO3GxdrP4IRclhTN16ni4oJUMVnqaW2VnfUSiR+lJj6NOPaFxXZByy4K9cnERB2xd6SXfw==",
+      "path": "microsoft.aspnetcore.metadata/5.0.4",
+      "hashPath": "microsoft.aspnetcore.metadata.5.0.4.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -4125,11 +4154,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Authorization/5.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.AspNetCore.Authorization.Policy/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -4286,11 +4310,6 @@
       "sha512": ""
     },
     "Microsoft.AspNetCore.Localization.Routing/5.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.AspNetCore.Metadata/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

@@ -15,20 +15,27 @@ namespace CleanArch.Demo.Api.Controllers
     [ApiController]
     public class CourseController : ControllerBase
     {
+        #region properties
         private readonly ICourseService _courseService;
         private readonly IMediator _mediator;
+        #endregion
+        #region ctor
         public CourseController(ICourseService courseService, IMediator mediator)
         {
             _courseService = courseService;
             _mediator = mediator;
         }
+        #endregion
+        #region methods
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Course course)
         {
-            var now = new CreateCourseCommand(course.Name, course.Description);
-            await _mediator.Send(now);
+           // var now = new CreateCourseCommand(course.Name, course.Description);
+           await _courseService.CreateCourse(course);
+            //await _mediator.Send(now);
 
             return Ok(true);
-        } 
+        }
+        #endregion
     }
 }

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanArch.Demo.Application\CleanArch.Demo.Application.csproj" />
     <ProjectReference Include="..\CleanArch.Demo.Domain.Core\CleanArch.Demo.Domain.Core.csproj" />
   </ItemGroup>
 

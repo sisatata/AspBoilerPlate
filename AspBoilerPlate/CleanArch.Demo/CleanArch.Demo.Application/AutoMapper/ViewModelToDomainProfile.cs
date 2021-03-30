@@ -12,7 +12,7 @@ namespace CleanArch.Demo.Application.AutoMapper
         public ViewModelToDomainProfile()
         {
             CreateMap<Course, CreateCourseCommand>()
-                .ConstructUsing(c => new CreateCourseCommand(c.Name, c.Description));
+                .ConstructUsing(c => new CreateCourseCommand());
         }
 
     }
