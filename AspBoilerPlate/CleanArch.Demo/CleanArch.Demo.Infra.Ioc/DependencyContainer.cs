@@ -1,6 +1,4 @@
 ﻿using CleanArch.Demo.Application.Commands.Model;
-using CleanArch.Demo.Application.Interfaces;
-using CleanArch.Demo.Application.Services;
 using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.CommnandHandlers;
 using CleanArch.Demo.Domain.Interfaces;
@@ -26,7 +24,6 @@ namespace CleanArch.Demo.Infra.Ioc
 
             //Domain CommonResponseDto
             services.AddScoped<IRequestHandler<CreateCourseCommand, CommonResponseDto>, CourseCommandHandler>();
-            services.AddScoped<ICourseService, CourseService>();
 
             //Infra.Data Layer
             services.AddScoped(typeof(IAsyncRepository<,>), typeof(EfRepository<,>));

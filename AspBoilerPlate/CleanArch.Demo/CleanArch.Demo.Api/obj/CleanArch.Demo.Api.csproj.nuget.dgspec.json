@@ -135,6 +135,9 @@
             "projectReferences": {
               "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj": {
                 "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Domain\\CleanArch.Demo.Domain.csproj"
+              },
+              "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj": {
+                "projectPath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Data\\CleanArch.Demo.Infra.Data.csproj"
               }
             }
           }

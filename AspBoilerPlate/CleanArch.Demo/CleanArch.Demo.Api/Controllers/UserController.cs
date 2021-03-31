@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using CleanArch.Demo.Application.Interfaces;
+using CleanArch.Demo.Application.ViewModels;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,9 +15,17 @@ namespace CleanArch.Demo.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public UserController()
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
         {
-
+            _userService = userService;
         }
+        [HttpPost("register")]
+        public async Task<IActionResult> RegisterAsync(RegisterDto request)
+        {
+            var result = await _userService.RegisterAsync(request);
+            return Ok(result);
+        }
+
     }
 }

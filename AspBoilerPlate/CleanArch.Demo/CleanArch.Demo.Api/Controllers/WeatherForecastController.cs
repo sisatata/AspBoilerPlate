@@ -1,5 +1,4 @@
-﻿using CleanArch.Demo.Application.Interfaces;
-using CleanArch.Demo.Domain.Interfaces;
+﻿using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -21,14 +20,13 @@ namespace CleanArch.Demo.Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        private readonly ICourseService _courseService;
         private readonly ICourseRepository _courseRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ICourseService courseService  , ICourseRepository courseRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger , ICourseRepository courseRepository)
 
         {
             _logger = logger;
-            _courseService = courseService;
+         
             _courseRepository = courseRepository;
         }
 
@@ -53,13 +51,7 @@ namespace CleanArch.Demo.Api.Controllers
             return Ok();
         }
 
-        [HttpGet("{Id}")]
-
-        public async Task<IActionResult> GetCourseById(Guid Id)
-        {
-            var data = await _courseService.GetCourseById(Id);
-            return Ok(data);
-        }
+       
 
 
     }

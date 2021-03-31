@@ -1523,6 +1523,7 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "CleanArch.Demo.Domain": "1.0.0",
+          "CleanArch.Demo.Infra.Data": "1.0.0",
           "Dapper": "2.0.78",
           "MediatR": "9.0.0",
           "Microsoft.AspNetCore.Authorization": "5.0.4"

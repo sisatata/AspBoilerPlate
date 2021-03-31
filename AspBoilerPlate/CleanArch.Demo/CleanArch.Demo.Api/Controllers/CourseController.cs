@@ -1,5 +1,4 @@
-﻿using CleanArch.Demo.Application.Interfaces;
-using CleanArch.Demo.Domain.Commands;
+﻿using CleanArch.Demo.Domain.Commands;
 using CleanArch.Demo.Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using CleanArch.Demo.Application.Queries.CourseQuery.Model;
 namespace CleanArch.Demo.Api.Controllers
 {
     [Route("Api/[controller]")]
@@ -16,13 +15,12 @@ namespace CleanArch.Demo.Api.Controllers
     public class CourseController : BaseController<CourseController>
     {
         #region properties
-        private readonly ICourseService _courseService;
         
         #endregion
         #region ctor
-        public CourseController(ICourseService courseService, IMediator mediator)
+        public CourseController()
         {
-            _courseService = courseService;
+            
            
         }
         #endregion
@@ -35,6 +33,14 @@ namespace CleanArch.Demo.Api.Controllers
             //  //await _mediator.Send(now);
           var data =   await _mediator.Send(new CreateCourseCommand { Description = course.Description, Name = course.Name });
 
+            return Ok(data);
+        }
+        [HttpGet("{Id}")]
+
+        public async Task<IActionResult> GetCourseById(Guid Id)
+        {
+              //var data = await _courseService.GetCourseById(Id);
+            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetCoursesQuery { Id = Id });
             return Ok(data);
         }
         #endregion

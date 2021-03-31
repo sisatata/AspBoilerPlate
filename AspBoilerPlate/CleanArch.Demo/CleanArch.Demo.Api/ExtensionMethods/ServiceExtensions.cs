@@ -38,9 +38,8 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             });
             //Domain Handlers
             services.AddScoped<IRequestHandler<CreateCourseCommand, CommonResponseDto>, CourseCommandHandler>();
-           
-            services.AddScoped(typeof(ICourseService), typeof(CourseService));
-          
+
+            services.AddScoped<IUserService, UserService>();
             // services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped(typeof(IAsyncRepository<,>), typeof(EfRepository<,>));
             // services.AddTransient<ICourseService, CourseService>();
