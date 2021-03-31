@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CleanArch.Demo.Domain.Models;
+using Microsoft.AspNetCore.Identity;
 
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,10 @@ namespace CleanArch.Demo.Infra.Data.Context
 {
     public class ApplicationUser : IdentityUser
     {
-       
-      
-       
-        
-        
+
+
+        public List<RefreshToken> RefreshTokens { get; set; }
+
+
     }
 }

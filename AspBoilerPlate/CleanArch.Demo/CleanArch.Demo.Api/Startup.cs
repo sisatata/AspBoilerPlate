@@ -1,15 +1,19 @@
 using CleanArch.Demo.Api.Configurations;
 using CleanArch.Demo.Api.ExtensionMethods;
+using CleanArch.Demo.Application.Settings;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Ioc;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-
+using System;
+using System.Text;
 
 namespace CleanArch.Demo.Api
 {
@@ -29,6 +33,7 @@ namespace CleanArch.Demo.Api
             services.AddServices();
             services.AddOptions();
             services.AddMemoryCache();
+            services.Configure<JWT>(Configuration.GetSection("JWT"));
             services.AddDbContext<UniversityDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
@@ -38,6 +43,29 @@ namespace CleanArch.Demo.Api
  */
          //   services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
             services.AddControllers();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+
+                .AddJwtBearer(o =>
+                {
+                    o.RequireHttpsMetadata = false;
+                    o.SaveToken = false;
+                    o.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero,
+
+                        ValidIssuer = Configuration["JWT:Issuer"],
+                        ValidAudience = Configuration["JWT:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Key"]))
+                    };
+                });
             services.AddMemoryCache();
             //
 

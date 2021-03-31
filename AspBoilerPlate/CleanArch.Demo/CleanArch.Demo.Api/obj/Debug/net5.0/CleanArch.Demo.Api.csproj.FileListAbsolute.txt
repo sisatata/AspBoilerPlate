@@ -111,7 +111,6 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -160,3 +159,5 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net5.0\ref\CleanArch.Demo.Api.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net5.0\CleanArch.Demo.Api.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net5.0\CleanArch.Demo.Api.genruntimeconfig.cache
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Newtonsoft.Json.dll

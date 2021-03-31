@@ -1,6 +1,7 @@
 ﻿using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.ViewModels;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,22 @@ namespace CleanArch.Demo.Api.Controllers
         {
             var result = await _userService.RegisterAsync(request);
             return Ok(result);
+        }
+        [HttpPost("token")]
+        public async Task<IActionResult> GetTokenAsync(TokenRequestModel model)
+        {
+            var result = await _userService.GetTokenAsync(model);
+             SetRefreshTokenInCookie(result.RefreshToken);
+            return Ok(result);
+        }
+        private void SetRefreshTokenInCookie(string refreshToken)
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Expires = DateTime.UtcNow.AddDays(10),
+            };
+            Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
         }
 
     }

@@ -9,5 +9,6 @@ namespace CleanArch.Demo.Application.Interfaces
   public interface IUserService
     {
         Task<string> RegisterAsync(RegisterDto model);
+        Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
     }
 }
