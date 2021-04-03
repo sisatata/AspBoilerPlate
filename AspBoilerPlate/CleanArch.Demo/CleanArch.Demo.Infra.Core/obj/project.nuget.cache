@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Mc8D0Uz7Wc0so3x+Mx9VZYUxKK7lx5AV5GwNgOuqHKCxe1by+xQpho07F/0T48d3VnZikxZ1fa7mMCOSv33IUg==",
+  "dgSpecHash": "Z5V/Y/m7LGWiRsLkx88PxKvWUuTXbkknR6Bid9PvHaMWGbJfzfPoSAYEjuq1YTu5t3R1MGOrNrSf9l/BEgrpIw==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Infra.Core\\CleanArch.Demo.Infra.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SB\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
-    "C:\\Users\\SB\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
   ],
   "logs": []

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Jmd7rKeyWtkOUG3k6cVxm5ZB8xCGMrV4+5etffq89fmhzA9Avzyt+mDnnDy3vxhMkBnwJYP4gD/1Gi1y7D22ww==",
+  "dgSpecHash": "KrvJuRDEqM0CsmMr6rP1vVbWXQTIz9ZlQDL3BAygyopHYHSxxGYz5aj7t27dfw3nyfhcZNx0ako/zt7DvcZeuw==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Application\\CleanArch.Demo.Application.csproj",
   "expectedPackageFiles": [

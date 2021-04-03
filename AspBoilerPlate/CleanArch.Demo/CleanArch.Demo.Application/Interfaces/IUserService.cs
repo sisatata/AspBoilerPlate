@@ -10,5 +10,8 @@ namespace CleanArch.Demo.Application.Interfaces
     {
         Task<string> RegisterAsync(RegisterDto model);
         Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
+        Task DeleteUserAsync(string userId);
+
+     
     }
 }

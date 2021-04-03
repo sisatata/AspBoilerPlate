@@ -32,6 +32,7 @@ namespace CleanArch.Demo.Api
            
             services.AddServices();
             services.AddOptions();
+            services.AddHttpContextAccessor();
             services.AddMemoryCache();
             services.Configure<JWT>(Configuration.GetSection("JWT"));
             services.AddDbContext<UniversityDBContext>(options =>

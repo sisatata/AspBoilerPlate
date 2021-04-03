@@ -43,16 +43,5 @@ namespace CleanArch.Demo.Api.Controllers
             .ToArray();
         }
 
-        [HttpPost]
-
-        public async Task<IActionResult> CreateCourse([FromBody] Course command)
-        {
-            await _courseRepository.AddAsync(command);
-            return Ok();
-        }
-
-       
-
-
     }
 }

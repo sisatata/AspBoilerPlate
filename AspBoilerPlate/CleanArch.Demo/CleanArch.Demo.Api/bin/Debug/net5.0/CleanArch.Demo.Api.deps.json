@@ -1472,7 +1472,6 @@
           "CleanArch.Demo.Shared": "1.0.0",
           "Dapper": "2.0.78",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.2",
-          "Newtonsoft.Json": "13.0.1",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "runtime": {
@@ -1485,8 +1484,7 @@
       "CleanArch.Demo.Infra.Core/1.0.0": {
         "dependencies": {
           "CleanArch.Demo.Shared": "1.0.0",
-          "Dapper": "2.0.78",
-          "Newtonsoft.Json": "13.0.1"
+          "Dapper": "2.0.78"
         },
         "runtime": {
           "CleanArch.Demo.Infra.Core.dll": {}
@@ -1502,8 +1500,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.2",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
-          "Newtonsoft.Json": "13.0.1"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
         "runtime": {
           "CleanArch.Demo.Infra.Data.dll": {}
@@ -1517,8 +1514,7 @@
           "CleanArch.Demo.Application": "1.0.0",
           "CleanArch.Demo.Infra.Data": "1.0.0",
           "Dapper": "2.0.78",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
         "runtime": {
           "CleanArch.Demo.Infra.Ioc.dll": {}
@@ -1529,8 +1525,7 @@
       },
       "CleanArch.Demo.Shared/1.0.0": {
         "dependencies": {
-          "Dapper": "2.0.78",
-          "Newtonsoft.Json": "13.0.1"
+          "Dapper": "2.0.78"
         },
         "runtime": {
           "CleanArch.Demo.Shared.dll": {}

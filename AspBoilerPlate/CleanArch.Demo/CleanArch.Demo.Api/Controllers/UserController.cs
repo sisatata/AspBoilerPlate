@@ -1,11 +1,14 @@
 ﻿using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.ViewModels;
+using CleanArch.Demo.Infra.Data.Context;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Api.Controllers
@@ -17,9 +20,15 @@ namespace CleanArch.Demo.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly UserManager<ApplicationUser> _userManager;
+        public string LoggedInUser => User.Identity.Name;
+        public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager)
         {
             _userService = userService;
+            _httpContextAccessor = httpContextAccessor;
+            _userManager = userManager;
+
         }
         [HttpPost("register")]
         public async Task<IActionResult> RegisterAsync(RegisterDto request)
@@ -42,6 +51,22 @@ namespace CleanArch.Demo.Api.Controllers
                 Expires = DateTime.UtcNow.AddDays(10),
             };
             Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+        }
+
+        [HttpPost("delete")]
+        public async Task<IActionResult> DeleteUserAsync(string userId)
+        {
+            
+            await _userService.DeleteUserAsync(userId);
+          
+            return Ok(true);
+        }
+        [HttpGet("current-user")]
+        public async Task<IActionResult> GetCurrentUser()
+        {
+            var userName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var user = await _userManager.FindByNameAsync(userName);
+            return Ok(user);
         }
 
     }

@@ -16,6 +16,7 @@ using CleanArch.Demo.Application.Settings;
 using CleanArch.Demo.Domain.Models;
 using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
 
 namespace CleanArch.Demo.Application.Services
 {
@@ -25,6 +26,7 @@ namespace CleanArch.Demo.Application.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JWT _jwt;
+
         public UserService(UniversityDBContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
         {
             _context = context;
@@ -62,6 +64,7 @@ namespace CleanArch.Demo.Application.Services
         {
             var authenticationModel = new AuthenticationModel();
             var user = await _userManager.FindByEmailAsync(model.Email);
+            var now = await _context.ApplicationUsers.ToListAsync();
             if (user == null)
             {
                 authenticationModel.IsAuthenticated = false;
@@ -166,6 +169,22 @@ namespace CleanArch.Demo.Application.Services
 
             }
         }
+
+        public async Task DeleteUserAsync(string userId)
+        {
+            
+            //get User Data from Userid
+            var user = await _userManager.FindByIdAsync(userId);
+            //List Logins associated with user
+            await _userManager.DeleteAsync(user);
+          
+
+
+        }
+
+       
+
+
 
     }
 

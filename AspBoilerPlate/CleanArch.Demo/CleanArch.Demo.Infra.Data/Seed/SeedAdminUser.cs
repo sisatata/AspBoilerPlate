@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,19 +21,7 @@ namespace CleanArch.Demo.Infra.Data.Seed
                 await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.Moderator.ToString()));
                 await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.User.ToString()));
 
-                //Seed Default User
-                var defaultUser = new ApplicationUser { UserName = Authorization.default_username, Email = Authorization.default_email, EmailConfirmed = true, PhoneNumberConfirmed = true };
-
-                if (userManager.Users.All(u => u.Id != defaultUser.Id))
-                {
-                    //  var userBasic = await userManager.FindByEmailAsync(defaultUser.Email);
-                    //  if (userBasic == null)
-                    {
-                        var now = await userManager.CreateAsync(defaultUser, Authorization.default_password);
-                        await userManager.AddToRoleAsync(defaultUser, Authorization.default_role.ToString());
-                    }
-                }
-
+               
 
                 var adminUser = new ApplicationUser
                 {
@@ -53,7 +42,7 @@ namespace CleanArch.Demo.Infra.Data.Seed
                         await userManager.AddToRoleAsync(adminUser, Authorization.default_Mode.ToString());
 
                     }
-                    // await roleManager.SeedClaimsForSuperAdmin();
+                     await roleManager.SeedClaimsForSuperAdmin();
                 }
 
 
@@ -62,6 +51,31 @@ namespace CleanArch.Demo.Infra.Data.Seed
             catch (Exception ex)
             {
                 var now = ex;
+            }
+        }
+        private async static Task SeedClaimsForSuperAdmin(this RoleManager<IdentityRole> roleManager)
+        {
+            var adminRole = await roleManager.FindByNameAsync("Administrator");
+            await roleManager.AddPermissionClaim(adminRole, "Products");
+        }
+
+        public static async Task AddPermissionClaim(this RoleManager<IdentityRole> roleManager, IdentityRole role, string module)
+        {
+            try
+            {
+                var allClaims = await roleManager.GetClaimsAsync(role);
+                var allPermissions = Permissions.GeneratePermissionsForModule(module);
+                foreach (var permission in allPermissions)
+                {
+                    if (!allClaims.Any(a => a.Type == "Permission" && a.Value == permission))
+                    {
+                        await roleManager.AddClaimAsync(role, new Claim("Permission", permission));
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
     }
