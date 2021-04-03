@@ -17,6 +17,7 @@ using CleanArch.Demo.Domain.Models;
 using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using CleanArch.Demo.Application.Commands.Model;
 
 namespace CleanArch.Demo.Application.Services
 {
@@ -26,7 +27,7 @@ namespace CleanArch.Demo.Application.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JWT _jwt;
-
+      
         public UserService(UniversityDBContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
         {
             _context = context;
@@ -173,16 +174,105 @@ namespace CleanArch.Demo.Application.Services
         public async Task DeleteUserAsync(string userId)
         {
             
-            //get User Data from Userid
             var user = await _userManager.FindByIdAsync(userId);
-            //List Logins associated with user
             await _userManager.DeleteAsync(user);
           
-
-
         }
 
-       
+        public async Task<CommonResponseDto> ChangePasswordAsync(ChangePasswordDto model)
+        {
+            var response = new CommonResponseDto
+            {
+                Status = false,
+                Message = "Can't change password"
+            };
+            try
+            {
+               
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user == null)
+                {
+                    response.Message = "User not found";
+                    return response;
+                }
+                bool IsPasswordCorrect = await _userManager.CheckPasswordAsync(user, model.OldPassword);
+                if (!IsPasswordCorrect)
+                {
+                    response.Message = "Password incorrect";
+                    return response;
+                }
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var resetPassResult = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
+
+                if (resetPassResult.Succeeded)
+                {
+                    response.Status = true;
+                    response.Message = "Password updated successfully";
+                    return response;
+                }
+                return response;
+            }
+            catch( Exception ex)
+            {
+                response.Status = false;
+                response.Message = ex.ToString();
+                return response;
+            }
+           
+        }
+        
+        public async Task<bool> CreateRoles(string role)
+        {
+            try
+            {
+                var roleExist = await _roleManager.RoleExistsAsync(role);
+              
+                if (!roleExist)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(role));
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<IdentityRole>> GetRoles()
+        {
+            var roles = _roleManager.Roles;
+            return await roles.ToListAsync();
+        }
+
+        public async Task<CommonResponseDto> DeleteRole(string role)
+        {
+            var response = new CommonResponseDto
+            {
+                Status = false,
+
+            };
+            try
+            {
+                var roleExist = await _roleManager.RoleExistsAsync(role);
+
+                if (!roleExist)
+                {
+                    response.Status = true;
+                    response.Message = "Role does not exist";
+                    return response;
+                }
+                var roleName = await _roleManager.FindByNameAsync(role);
+                await _roleManager.DeleteAsync(roleName);
+                response.Status = true;
+                response.Message = "Role successfully deleted";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
 
 

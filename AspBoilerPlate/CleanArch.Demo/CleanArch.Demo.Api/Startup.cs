@@ -6,6 +6,7 @@ using CleanArch.Demo.Infra.Ioc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,10 +40,15 @@ namespace CleanArch.Demo.Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
             });
+
+            services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<UniversityDBContext>()
+                .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);
+
             /* services.AddTransient<ICourseService, CourseService>();
              services.AddTransient<IAsyncCourseRepository<Domain.Models.Course, int>, CourseRepository<Domain.Models.Course, int>>();
  */
-         //   services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
+            //   services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
             services.AddControllers();
             services.AddAuthentication(options =>
             {

@@ -18,10 +18,11 @@ namespace CleanArch.Demo.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IMediator _mediator;
+       
         private readonly IUserService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<ApplicationUser> _userManager;
+       
         public string LoggedInUser => User.Identity.Name;
         public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager)
         {
@@ -68,6 +69,32 @@ namespace CleanArch.Demo.Api.Controllers
             var user = await _userManager.FindByNameAsync(userName);
             return Ok(user);
         }
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangeUserPassword(ChangePasswordDto changePasswordDto)
+        {
+           var result =  await _userService.ChangePasswordAsync(changePasswordDto);
+            return Ok(result);
+        }
+        [HttpPost("create-role")]
+       public async Task<IActionResult> CreateRole(string role)
+        {
+            var res = await _userService.CreateRoles(role);
+            return Ok(true);
+        }
+        [HttpGet("get-roles")]
+        public async Task<IActionResult> GetRoles()
+        {
+            var res = await _userService.GetRoles();
+            return Ok(res);
+        }
+        [HttpPost("delete-role")]
+
+        public async Task<IActionResult> DeleteRole(string role)
+        {
+            var res = await _userService.DeleteRole(role);
+            return Ok(res);
+        }
+
 
     }
 }
