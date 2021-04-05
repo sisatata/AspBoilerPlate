@@ -10,6 +10,7 @@ namespace CleanArch.Demo.Shared.Constants.Security
         {
             public const string Manage = "users.manage.policy";
             public const string EditRole = "users.edit.role.policy";
+            public const string CreateUser = "users.create.policy";
         }
 
         public static class Teams

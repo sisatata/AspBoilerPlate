@@ -8,13 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CleanArch.Demo.Application.Queries.CourseQuery.Model;
 using Microsoft.AspNetCore.Authorization;
+using CleanArch.Demo.Shared.Constants.Security;
 
 namespace CleanArch.Demo.Api.Controllers
 {
     [Route("Api/[controller]")]
 
     [ApiController]
-    [Authorize]
+   
     public class CourseController : BaseController<CourseController>
     {
        

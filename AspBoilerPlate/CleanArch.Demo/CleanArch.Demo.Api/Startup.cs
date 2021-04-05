@@ -3,6 +3,7 @@ using CleanArch.Demo.Api.ExtensionMethods;
 using CleanArch.Demo.Application.Settings;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Ioc;
+using CleanArch.Demo.Shared.Constants.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,6 +51,11 @@ namespace CleanArch.Demo.Api
  */
             //   services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
             services.AddControllers();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(PolicyTypes.Users.CreateUser, policy => policy.RequireClaim("Permission", Permissions.Users.Create));
+               // options.AddPolicy(PolicyTypes.Teams.AddRemove, policy => policy.RequireClaim("Permission", Permissions.Products.Create));
+            });
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

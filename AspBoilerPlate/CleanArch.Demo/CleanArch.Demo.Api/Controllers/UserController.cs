@@ -1,7 +1,9 @@
 ﻿using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Infra.Data.Context;
+using CleanArch.Demo.Shared.Constants.Security;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -55,6 +57,7 @@ namespace CleanArch.Demo.Api.Controllers
         }
 
         [HttpPost("delete")]
+        [Authorize(Policy = PolicyTypes.Users.EditRole)]
         public async Task<IActionResult> DeleteUserAsync(string userId)
         {
             
