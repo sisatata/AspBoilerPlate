@@ -97,6 +97,16 @@ namespace CleanArch.Demo.Api.Controllers
             var res = await _userService.DeleteRole(role);
             return Ok(res);
         }
+        [HttpPut("update-user")]
+        public async Task<IActionResult> UpdateUser(UserDto model)
+        {
+            var userName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var user = await _userManager.FindByNameAsync(userName);
+           var res =  await _userService.UpdateUser(user, model);
+          
+            return Ok(res);
+
+        }
 
 
     }

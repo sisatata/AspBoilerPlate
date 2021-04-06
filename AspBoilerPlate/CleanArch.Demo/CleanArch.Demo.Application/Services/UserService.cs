@@ -18,6 +18,7 @@ using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using CleanArch.Demo.Application.Commands.Model;
+using AutoMapper;
 
 namespace CleanArch.Demo.Application.Services
 {
@@ -27,13 +28,15 @@ namespace CleanArch.Demo.Application.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JWT _jwt;
-      
-        public UserService(UniversityDBContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
+        private readonly IMapper _autoMapper;
+
+        public UserService(UniversityDBContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt, IMapper autoMapper)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
             _jwt = jwt.Value;
+            _autoMapper = autoMapper;
         }
 
         
@@ -270,6 +273,27 @@ namespace CleanArch.Demo.Application.Services
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+       public async Task<CommonResponseDto> UpdateUser(ApplicationUser user, UserDto model)
+        {
+            var response = new CommonResponseDto
+            {
+                Status = false,
+                Message = "Can't change password"
+            };
+            try{
+                // need to use auto mapper
+                user.Name = model.Name;
+                await _userManager.UpdateAsync(user);
+                response.Status = true;
+                response.Message = "User updated successfully";
+                return response;
+            }
+            catch(Exception ex)
+            {
+                throw;
             }
         }
 

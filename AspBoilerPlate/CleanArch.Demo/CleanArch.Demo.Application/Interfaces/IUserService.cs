@@ -1,5 +1,6 @@
 ﻿using CleanArch.Demo.Application.Commands.Model;
 using CleanArch.Demo.Application.ViewModels;
+using CleanArch.Demo.Infra.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,7 @@ namespace CleanArch.Demo.Application.Interfaces
         Task<bool> CreateRoles(string role);
         Task<List<IdentityRole>> GetRoles();
         Task<CommonResponseDto> DeleteRole(string role);
+
+        Task<CommonResponseDto> UpdateUser(ApplicationUser user, UserDto model);
     }
 }
