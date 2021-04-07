@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.Interfaces
 {
-  public interface IUserService
+    public interface IUserService
     {
         Task<string> RegisterAsync(RegisterDto model);
         Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
@@ -21,5 +21,10 @@ namespace CleanArch.Demo.Application.Interfaces
         Task<CommonResponseDto> DeleteRole(string role);
 
         Task<CommonResponseDto> UpdateUser(ApplicationUser user, UserDto model);
+        Task<CommonResponseDto> CreateRole(string role);
+        Task<bool> AssignRole(string userId, string[] roles);
+
+        Task<CommonResponseDto> AssignPermissionToRole(string role, string permission);
+
     }
 }

@@ -1,15 +1,11 @@
 ﻿using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Infra.Data.Context;
-using CleanArch.Demo.Shared.Constants.Security;
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -20,11 +16,11 @@ namespace CleanArch.Demo.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-       
+
         private readonly IUserService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<ApplicationUser> _userManager;
-       
+
         public string LoggedInUser => User.Identity.Name;
         public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager)
         {
@@ -43,7 +39,7 @@ namespace CleanArch.Demo.Api.Controllers
         public async Task<IActionResult> GetTokenAsync(TokenRequestModel model)
         {
             var result = await _userService.GetTokenAsync(model);
-             SetRefreshTokenInCookie(result.RefreshToken);
+            SetRefreshTokenInCookie(result.RefreshToken);
             return Ok(result);
         }
         private void SetRefreshTokenInCookie(string refreshToken)
@@ -57,12 +53,12 @@ namespace CleanArch.Demo.Api.Controllers
         }
 
         [HttpPost("delete")]
-        [Authorize(Policy = PolicyTypes.Users.EditRole)]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteUserAsync(string userId)
         {
-            
+
             await _userService.DeleteUserAsync(userId);
-          
+
             return Ok(true);
         }
         [HttpGet("current-user")]
@@ -75,15 +71,10 @@ namespace CleanArch.Demo.Api.Controllers
         [HttpPost("change-password")]
         public async Task<IActionResult> ChangeUserPassword(ChangePasswordDto changePasswordDto)
         {
-           var result =  await _userService.ChangePasswordAsync(changePasswordDto);
+            var result = await _userService.ChangePasswordAsync(changePasswordDto);
             return Ok(result);
         }
-        [HttpPost("create-role")]
-       public async Task<IActionResult> CreateRole(string role)
-        {
-            var res = await _userService.CreateRoles(role);
-            return Ok(true);
-        }
+      
         [HttpGet("get-roles")]
         public async Task<IActionResult> GetRoles()
         {
@@ -102,11 +93,30 @@ namespace CleanArch.Demo.Api.Controllers
         {
             var userName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var user = await _userManager.FindByNameAsync(userName);
-           var res =  await _userService.UpdateUser(user, model);
-          
+            var res = await _userService.UpdateUser(user, model);
+
             return Ok(res);
 
         }
+        [HttpPost("create-role")]
+        public async Task<IActionResult> CreateRole(string role)
+        {
+            var res = await _userService.CreateRole(role);
+            return Ok(res);
+        }
+        [HttpPost("assign-role")]
+        public async Task<IActionResult> AssignRoleToUser([FromBody] UserRoleDTO model)
+        {
+            var res = await _userService.AssignRole(model.UserId, model.Roles);
+            return Ok(res);
+        }
+        [HttpPost("assign-permission")]
+        public async Task<IActionResult> AssignPermissionToRole(string role, string permission)
+        {
+            var res = await _userService.AssignPermissionToRole(role, permission);
+            return Ok(res);
+        }
+
 
 
     }

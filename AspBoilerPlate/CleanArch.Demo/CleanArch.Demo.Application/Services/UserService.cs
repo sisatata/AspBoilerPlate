@@ -11,7 +11,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
-
 using CleanArch.Demo.Application.Settings;
 using CleanArch.Demo.Domain.Models;
 using System.Security.Cryptography;
@@ -39,14 +38,14 @@ namespace CleanArch.Demo.Application.Services
             _autoMapper = autoMapper;
         }
 
-        
+
         public async Task<string> RegisterAsync(RegisterDto model)
         {
             var user = new ApplicationUser
             {
                 UserName = model.Name,
                 Email = model.Email,
-              
+
             };
             var userWithSameEmail = await _userManager.FindByEmailAsync(model.Email);
             if (userWithSameEmail == null)
@@ -176,10 +175,10 @@ namespace CleanArch.Demo.Application.Services
 
         public async Task DeleteUserAsync(string userId)
         {
-            
+
             var user = await _userManager.FindByIdAsync(userId);
             await _userManager.DeleteAsync(user);
-          
+
         }
 
         public async Task<CommonResponseDto> ChangePasswordAsync(ChangePasswordDto model)
@@ -191,7 +190,7 @@ namespace CleanArch.Demo.Application.Services
             };
             try
             {
-               
+
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null)
                 {
@@ -215,21 +214,21 @@ namespace CleanArch.Demo.Application.Services
                 }
                 return response;
             }
-            catch( Exception ex)
+            catch (Exception ex)
             {
                 response.Status = false;
                 response.Message = ex.ToString();
                 return response;
             }
-           
+
         }
-        
+
         public async Task<bool> CreateRoles(string role)
         {
             try
             {
                 var roleExist = await _roleManager.RoleExistsAsync(role);
-              
+
                 if (!roleExist)
                 {
                     await _roleManager.CreateAsync(new IdentityRole(role));
@@ -276,14 +275,15 @@ namespace CleanArch.Demo.Application.Services
             }
         }
 
-       public async Task<CommonResponseDto> UpdateUser(ApplicationUser user, UserDto model)
+        public async Task<CommonResponseDto> UpdateUser(ApplicationUser user, UserDto model)
         {
             var response = new CommonResponseDto
             {
                 Status = false,
                 Message = "Can't change password"
             };
-            try{
+            try
+            {
                 // need to use auto mapper
                 user.Name = model.Name;
                 await _userManager.UpdateAsync(user);
@@ -291,12 +291,103 @@ namespace CleanArch.Demo.Application.Services
                 response.Message = "User updated successfully";
                 return response;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw;
             }
         }
 
+        public async Task<CommonResponseDto> CreateRole(string role)
+        {
+            try
+            {
+                var response = new CommonResponseDto
+                {
+                    Status = false,
+                    Message = "Can't change password"
+                };
+                var roleExist = await _roleManager.RoleExistsAsync(role);
+                if (!roleExist)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(role));
+                    response.Message = "Role successfully created";
+                    response.Status = true;
+                    return response;
+                }
+                return response;
+
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+
+        }
+        /*
+           var allClaims = await roleManager.GetClaimsAsync(role);
+                var allPermissions = Permissions.GeneratePermissionsForModule(module);
+                foreach (var permission in allPermissions)
+                {
+                    if (!allClaims.Any(a => a.Type == "Permission" && a.Value == permission))
+                    {
+                        await roleManager.AddClaimAsync(role, new Claim("Permission", permission));
+                    }
+                }
+
+         */
+        public async Task<bool> AssignRole(string userId, string[] roles)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null) throw new ArgumentException("User not found");
+                if (user != null)
+                    await DeleteUserRoles(user);
+                await _userManager.AddToRolesAsync(user, roles);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async Task DeleteUserRoles(ApplicationUser user)
+        {
+
+            var roles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, roles.ToArray());
+        }
+        public async Task<CommonResponseDto> AssignPermissionToRole(string role, string permission)
+        {
+            var response = new CommonResponseDto
+            {
+                Status = false,
+                Message = "Can't assign role to user"
+            };
+            try
+            {
+                var getRole = await _roleManager.FindByNameAsync(role);
+                var allPermissions = await _roleManager.GetClaimsAsync(getRole);
+                var isPermissionExist = allPermissions.Any(a => a.Type == "Permission" && a.Value == permission);
+                if (!isPermissionExist)
+                {
+                    await _roleManager.AddClaimAsync(getRole, new Claim("Permission", permission));
+                    response.Status = true;
+                    response.Message = "Permission assign to this role";
+                    return response;
+                }
+                response.Status = false;
+                response.Message = "Permission already assigned to this role";
+                return response;
+            }
+            catch( Exception ex)
+            {
+                throw;
+            }
+            
+        }
 
 
 
