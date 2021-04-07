@@ -11,6 +11,7 @@ namespace CleanArch.Demo.Infra.Core.Interfaces
         Task<T> GetByIdAsync(TId id);
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
+        Task DeleteAsync(T entity);
         //Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
 
     }

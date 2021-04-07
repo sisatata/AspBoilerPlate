@@ -16,5 +16,6 @@ namespace CleanArch.Demo.Domain.Models
         [ForeignKey("UserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
         public string Description { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }

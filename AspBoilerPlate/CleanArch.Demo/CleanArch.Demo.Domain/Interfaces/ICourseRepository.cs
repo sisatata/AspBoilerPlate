@@ -13,6 +13,8 @@ namespace CleanArch.Demo.Domain.Interfaces
         Task CreateCourse(Course entity);
 
         Task<Course> GetCourseById(Guid Id);
+
+        
         
 
 

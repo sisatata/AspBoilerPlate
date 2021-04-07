@@ -29,13 +29,18 @@ namespace CleanArch.Demo.Infra.Data.Repository
             return await _universityDBContext.Set<T>().FindAsync(id);
         }
 
-       
 
-        public Task UpdateAsync(T entity)
+
+        public async Task UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            
+            await _universityDBContext.SaveChangesAsync();
         }
-
+        public async  Task DeleteAsync(T entity)
+        {
+            _universityDBContext.Set<T>().Remove(entity);
+            await _universityDBContext.SaveChangesAsync();
+        }
 
     }
 }
