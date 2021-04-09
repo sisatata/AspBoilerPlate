@@ -31,11 +31,12 @@ namespace CleanArch.Demo.Application.CommnandHandlers
             try
             {
                 var course = await _courseRepository.GetByIdAsync(request.Id);
+                // need to use auto mapper
                 course.Name = request.Name;
                 course.Description = request.Description;
                 await _courseRepository.UpdateAsync(course);
                 response.Status = true;
-                response.Message = "Course successfully Deleted";
+                response.Message = "Course successfully Updated";
                 return response;
             }
             catch (Exception ex)

@@ -20,13 +20,14 @@ namespace CleanArch.Demo.Api.Controllers
         private readonly IUserService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<ApplicationUser> _userManager;
-
+        private readonly SignInManager<ApplicationUser> _signInManager;
         public string LoggedInUser => User.Identity.Name;
-        public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager)
+        public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userService = userService;
             _httpContextAccessor = httpContextAccessor;
             _userManager = userManager;
+            _signInManager = signInManager;
 
         }
         [HttpPost("register")]
@@ -116,6 +117,14 @@ namespace CleanArch.Demo.Api.Controllers
             var res = await _userService.AssignPermissionToRole(role, permission);
             return Ok(res);
         }
+        [HttpPost("logout")]
+        public async Task<IActionResult> LogOut(string role, string permission)
+        {
+            await _signInManager.SignOutAsync();
+            return Ok(true);
+            
+        }
+
 
 
 

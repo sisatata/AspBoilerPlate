@@ -30,8 +30,7 @@
               "src/styles.scss",
               "./node_modules/font-awesome/scss/font-awesome.scss"
             ],
-            "scripts": [
-            ],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -142,5 +141,8 @@
       }
     }
   },
-  "defaultProject": "architectui-angular-free"
+  "defaultProject": "architectui-angular-free",
+  "cli": {
+    "analytics": "2c16aae0-d185-4fa8-918b-63810f9ec2c7"
+  }
 }
