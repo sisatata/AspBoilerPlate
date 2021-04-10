@@ -19,8 +19,10 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\D
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Application.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Data.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Domain.pdb
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Data.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Core.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\obj\Debug\netstandard2.1\CleanArch.Demo.Application.csprojAssemblyReference.cache
@@ -30,5 +32,3 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\obj\D
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\obj\Debug\netstandard2.1\CleanArch.Demo.Application.csproj.CopyComplete
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\obj\Debug\netstandard2.1\CleanArch.Demo.Application.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\obj\Debug\netstandard2.1\CleanArch.Demo.Application.pdb
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Data.dll
-E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Application\bin\Debug\netstandard2.1\CleanArch.Demo.Infra.Data.pdb

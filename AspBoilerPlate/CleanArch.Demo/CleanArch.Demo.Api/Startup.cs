@@ -3,6 +3,7 @@ using CleanArch.Demo.Api.ExtensionMethods;
 using CleanArch.Demo.Application.Settings;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Ioc;
+
 using CleanArch.Demo.Shared.Constants.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -10,12 +11,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArch.Demo.Api
 {
@@ -46,6 +48,10 @@ namespace CleanArch.Demo.Api
             services.AddHttpContextAccessor();
             services.AddMemoryCache();
             services.Configure<JWT>(Configuration.GetSection("JWT"));
+            services.AddHealthChecks()
+            .AddDbContextCheck<UniversityDBContext>();
+            
+           
             services.AddDbContext<UniversityDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
@@ -118,7 +124,8 @@ namespace CleanArch.Demo.Api
                     options.DisplayRequestDuration();
                 });
             }
-            
+            app.UseHealthChecks("/health");
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -1,3 +1,9 @@
-coreui-free-angular-admin-template-master
 \CleanArch.Demo\.vs
 architectui-angular-free-theme
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+AspBoilerPlate/CleanArch.Demo/CleanArch.Demo.Api/bin
