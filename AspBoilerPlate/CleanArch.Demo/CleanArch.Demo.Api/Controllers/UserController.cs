@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -20,14 +22,17 @@ namespace CleanArch.Demo.Api.Controllers
         private readonly IUserService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEmailSender _emailSender;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        public string LoggedInUser => User.Identity.Name;
-        public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        private readonly IOptions<EmailConfiguration> _mailServerSettings;
+        public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailSender emailSender, IOptions<EmailConfiguration> mailServerSettings)
         {
             _userService = userService;
             _httpContextAccessor = httpContextAccessor;
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailSender = emailSender;
+            _mailServerSettings = mailServerSettings;
 
         }
         [HttpPost("register")]
@@ -124,9 +129,27 @@ namespace CleanArch.Demo.Api.Controllers
             return Ok(true);
             
         }
+        [HttpGet("isAuthenticated")]
+        public async Task<IActionResult> IsAuthenticated()
+        {
+            var now =  _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
+            return Ok(true);
+
+        }
+        [HttpPost("forgot-password")]
+       
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        {
+
+            var res = await _userService.ForgotPassword(forgotPasswordModel.Email);
+          //  EmailHelper emailHelper = new EmailHelper();
+           // bool emailResponse = emailHelper.SendEmailPasswordReset(user.Email, link);
+
+            return Ok();
+            
+
+        }
 
 
-
-
-    }
+        }
 }

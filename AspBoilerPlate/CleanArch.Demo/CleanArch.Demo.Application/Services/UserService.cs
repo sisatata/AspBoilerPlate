@@ -27,15 +27,17 @@ namespace CleanArch.Demo.Application.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JWT _jwt;
+        private readonly IEmailSender _emailSender;
         private readonly IMapper _autoMapper;
 
-        public UserService(UniversityDBContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt, IMapper autoMapper)
+        public UserService(UniversityDBContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt, IMapper autoMapper, IEmailSender emailSender)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
             _jwt = jwt.Value;
             _autoMapper = autoMapper;
+            _emailSender = emailSender;
         }
 
 
@@ -388,6 +390,18 @@ namespace CleanArch.Demo.Application.Services
             }
             
         }
+        public async Task<ForgotPasswordResponse> ForgotPassword(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null) throw new ArgumentException($"User not found for the email {email}");
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var res = await _emailSender.SendResetPasswordLink(email, token);
+            var link = token;
+
+
+            return null;
+        }
+
 
 
 

@@ -2,6 +2,7 @@
 using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Shared;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,7 +30,10 @@ namespace CleanArch.Demo.Infra.Data.Repository
             return await _universityDBContext.Set<T>().FindAsync(id);
         }
 
-
+        public async Task<IReadOnlyList<T>> GetAll()
+        {
+            return await _universityDBContext.Set<T>().AsNoTracking().ToListAsync();
+        }
 
         public async Task UpdateAsync(T entity)
         {

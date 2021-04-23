@@ -18,6 +18,9 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
+using CleanArch.Demo.Application.ViewModels;
+using CleanArch.Demo.Application.Services;
+using CleanArch.Demo.Application.Interfaces;
 
 namespace CleanArch.Demo.Api
 {
@@ -50,13 +53,20 @@ namespace CleanArch.Demo.Api
             services.Configure<JWT>(Configuration.GetSection("JWT"));
             services.AddHealthChecks()
             .AddDbContextCheck<UniversityDBContext>();
-            
-           
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
+
             services.AddDbContext<UniversityDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
             });
-
+            var emailConfig = Configuration
+        .GetSection("EmailConfiguration")
+        .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<UniversityDBContext>()
                 .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);

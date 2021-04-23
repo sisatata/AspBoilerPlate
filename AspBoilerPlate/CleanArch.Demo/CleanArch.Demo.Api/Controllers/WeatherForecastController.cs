@@ -1,4 +1,6 @@
-﻿using CleanArch.Demo.Domain.Interfaces;
+﻿using CleanArch.Demo.Application.Interfaces;
+using CleanArch.Demo.Application.ViewModels;
+using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -19,15 +21,16 @@ namespace CleanArch.Demo.Api.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
-
+        private readonly IEmailSender _emailSender;
         private readonly ICourseRepository _courseRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger , ICourseRepository courseRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger , ICourseRepository courseRepository, IEmailSender emailSender)
 
         {
             _logger = logger;
          
             _courseRepository = courseRepository;
+            _emailSender = emailSender;
         }
 
         [HttpGet]
@@ -42,6 +45,20 @@ namespace CleanArch.Demo.Api.Controllers
             })
             .ToArray();
         }
-
+        [HttpGet("send-mail")]
+        public void SendMail()
+        {
+            try
+            {
+                var rng = new Random();
+                var message = new Message(new string[] { "aansadiqul@gmail.com" }, "Test email", "This is the content from our email.");
+               // _emailSender.SendEmail(message);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+           
+        }
     }
 }

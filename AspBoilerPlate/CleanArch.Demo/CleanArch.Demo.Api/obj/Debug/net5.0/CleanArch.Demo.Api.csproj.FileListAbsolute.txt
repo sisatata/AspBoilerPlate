@@ -164,3 +164,12 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\MailKit.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\MimeKit.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\NETCore.MailKit.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Pipelines.Sockets.Unofficial.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\StackExchange.Redis.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\System.Diagnostics.PerformanceCounter.dll
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll

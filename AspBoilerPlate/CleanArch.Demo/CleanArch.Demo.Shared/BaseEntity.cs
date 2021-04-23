@@ -18,7 +18,6 @@ namespace CleanArch.Demo.Shared
             Id = id;
             
         }
-
         protected BaseEntity() {
             CreatedTime = DateTime.Now;
         }

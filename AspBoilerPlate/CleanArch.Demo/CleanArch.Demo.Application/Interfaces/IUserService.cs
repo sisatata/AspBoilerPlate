@@ -25,6 +25,6 @@ namespace CleanArch.Demo.Application.Interfaces
         Task<bool> AssignRole(string userId, string[] roles);
 
         Task<CommonResponseDto> AssignPermissionToRole(string role, string permission);
-
+        Task<ForgotPasswordResponse> ForgotPassword(string email);
     }
 }

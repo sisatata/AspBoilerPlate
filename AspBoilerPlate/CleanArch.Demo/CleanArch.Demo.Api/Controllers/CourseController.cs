@@ -43,6 +43,12 @@ namespace CleanArch.Demo.Api.Controllers
             var data = await _mediator.Send(new Application.Queries.CourseQuery.GetCoursesQuery { Id = Id });
             return Ok(data);
         }
+        [HttpGet("Get-All")]
+        public async Task<IActionResult> GetAll()
+        {
+            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetAllCourseQuery());
+            return Ok(data);
+        }
         [HttpPost("delete-course")]
         public async Task<IActionResult> DeleteCourseById(Guid Id)
         {

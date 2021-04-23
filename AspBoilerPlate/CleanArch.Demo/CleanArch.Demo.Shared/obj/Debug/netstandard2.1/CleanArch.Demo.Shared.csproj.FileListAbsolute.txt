@@ -15,3 +15,4 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.csproj.CoreCompileInputs.cache
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.pdb
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Shared\obj\Debug\netstandard2.1\CleanArch.Demo.Shared.csprojAssemblyReference.cache

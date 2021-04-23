@@ -10,7 +10,6 @@ using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Data.Repository;
 using CleanArch.Demo.Infra.Data.Repository.Course;
-
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +22,7 @@ namespace CleanArch.Demo.Api.ExtensionMethods
     {
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>().AddDefaultTokenProviders();
             services.AddMediatR(typeof(CreateCourseCommand).GetTypeInfo().Assembly);
            
             services.AddMediatR(Assembly.GetExecutingAssembly());
