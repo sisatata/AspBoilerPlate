@@ -14,6 +14,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace CleanArch.Demo.Api.ExtensionMethods
@@ -41,6 +42,7 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             services.AddScoped<IUserService, UserService>();
             // services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped(typeof(IAsyncRepository<,>), typeof(EfRepository<,>));
+            services.AddScoped(typeof(List<Course>), typeof(List<Course>));
             // services.AddTransient<ICourseService, CourseService>();
             // services.AddScoped(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository));
 
