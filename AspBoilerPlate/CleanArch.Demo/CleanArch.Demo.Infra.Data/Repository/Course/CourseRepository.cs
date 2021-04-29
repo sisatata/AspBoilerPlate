@@ -6,6 +6,8 @@ using System.Data.Common;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
+
 namespace CleanArch.Demo.Infra.Data.Repository.Course
 {
     public class CourseRepository : EfRepository<Domain.Models.Course,Guid>, ICourseRepository
@@ -26,7 +28,23 @@ namespace CleanArch.Demo.Infra.Data.Repository.Course
             await _universityDBContext.SaveChangesAsync();
           
         }
-     
+
+        public async Task<List<Domain.Models.Course>> GetPagedCourse(int pageNumber, int pageSize)
+        {
+            var res =  await _universityDBContext.Courses
+              .Skip((pageNumber - 1) * pageSize)
+              .Take(pageSize)
+              .ToListAsync();
+            return res;
+
+        }
+        public async Task<int> CountAsync()
+        {
+            return await  _universityDBContext.Courses.CountAsync();
+
+        }
+
+       
     }
 
 }

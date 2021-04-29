@@ -45,6 +45,6 @@ namespace CleanArch.Demo.Infra.Data.Repository
             _universityDBContext.Set<T>().Remove(entity);
             await _universityDBContext.SaveChangesAsync();
         }
-
+       
     }
 }

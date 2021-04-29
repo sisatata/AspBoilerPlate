@@ -12,6 +12,8 @@ using CleanArch.Demo.Shared.Constants.Security;
 using AutoMapper;
 using CleanArch.Demo.Application.Commands;
 using CleanArch.Demo.Application.ViewModels;
+using CleanArch.Demo.Shared;
+using CleanArch.Demo.Application.Interfaces;
 
 namespace CleanArch.Demo.Api.Controllers
 {
@@ -22,11 +24,14 @@ namespace CleanArch.Demo.Api.Controllers
     public class CourseController : BaseController<CourseController>
     {
         private readonly IMapper _autoMapper;
+        private readonly IUriService _uriService;
         #region ctor
-        public CourseController(IMapper autoMapper)
+        public CourseController(IMapper autoMapper, IUriService uriService)
         {
             _autoMapper = autoMapper;
-           
+            _uriService = uriService;
+
+
         }
         #endregion
         #region methods
@@ -44,9 +49,11 @@ namespace CleanArch.Demo.Api.Controllers
             return Ok(data);
         }
         [HttpGet("Get-All")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
         {
-            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetAllCourseQuery());
+            var route = Request.Path.Value;
+            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetAllCourseQuery{ Path = route, PageNumber= validFilter.PageNumber, PageSize= validFilter.PageSize, UriService = _uriService});
             return Ok(data);
         }
         [HttpPost("delete-course")]

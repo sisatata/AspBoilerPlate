@@ -11,11 +11,14 @@ namespace CleanArch.Demo.Domain.Interfaces
     {
         
         Task CreateCourse(Course entity);
-
+        Task<int> CountAsync();
         Task<Course> GetCourseById(Guid Id);
 
-        
-        
+        Task<List<Domain.Models.Course>> GetPagedCourse(int pageNumber, int pageSize);
+
+
+
+
 
 
     }
