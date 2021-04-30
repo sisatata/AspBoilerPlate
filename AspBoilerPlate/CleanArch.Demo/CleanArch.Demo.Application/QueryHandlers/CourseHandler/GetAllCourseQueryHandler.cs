@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
 {
-    public class GetAllCourseQueryHandler : IRequestHandler<GetAllCourseQuery, PagedResponse<List<Course>>>
+    public class GetAllCourseQueryHandler : IRequestHandler<GetAllCourseQuery, PagedResponse<List<CourseDto>>>
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IMapper _autoMapper;
@@ -32,7 +32,7 @@ namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
         }
 
 
-        public async Task<PagedResponse<List<Course>>> Handle(GetAllCourseQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResponse<List<CourseDto>>> Handle(GetAllCourseQuery request, CancellationToken cancellationToken)
         {
             /* var cacheKey = "courseList";
              string serializedCustomerList;
@@ -57,9 +57,9 @@ namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
           
             var validFilter = new PaginationFilter(request.PageNumber, request.PageSize);
             var pagedData = await _courseRepository.GetPagedCourse(validFilter.PageNumber, validFilter.PageSize);
-
+            var data = _autoMapper.Map <List<CourseDto>> (pagedData);
             var totalRecords = await _courseRepository.CountAsync();
-            var pagedReponse = PaginationHelper.CreatePagedReponse<Course>(pagedData, validFilter, totalRecords, request.UriService, request.Path);
+            var pagedReponse = PaginationHelper.CreatePagedReponse<CourseDto>(data, validFilter, totalRecords, request.UriService, request.Path);
            //var data =  _autoMapper.Map<PagedResponse<List<CourseDto>>>(pagedReponse)
             return pagedReponse;
 

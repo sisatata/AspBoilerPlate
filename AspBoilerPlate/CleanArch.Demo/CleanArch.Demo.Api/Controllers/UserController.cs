@@ -149,6 +149,12 @@ namespace CleanArch.Demo.Api.Controllers
             
 
         }
+        [HttpPost("assign-permission-role")]
+        public async Task<IActionResult> AddPermissionToRole(string role , string permission)
+        {
+            var res = await _userService.AddPermissionToRole(role, permission);
+            return Ok(res);
+        }
 
 
         }

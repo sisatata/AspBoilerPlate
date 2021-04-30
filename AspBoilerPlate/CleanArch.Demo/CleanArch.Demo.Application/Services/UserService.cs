@@ -102,7 +102,24 @@ namespace CleanArch.Demo.Application.Services
                     _context.Update(user);
                     _context.SaveChanges();
                 }
+                // return claims
+                var userRoles = await _userManager.GetRolesAsync(user);
+                IList<Claim> claimsOfUser = new List<Claim> ();
+                List<string> claimListOfUser = new List<string>();
+                foreach (var role in userRoles)
+                {
+                    var roleList = await _roleManager.FindByNameAsync(role);
+                    var claims = await _roleManager.GetClaimsAsync(roleList);
+                    foreach(var claim in claims)
+                    {
+                        if (!claimsOfUser.Contains(claim)){
+                            claimListOfUser.Add(claim.Value.ToString());
+                            claimsOfUser.Add(claim);
+                        }
+                    }
 
+                }
+                authenticationModel.Claims = claimListOfUser;
                 return authenticationModel;
             }
             authenticationModel.IsAuthenticated = false;
@@ -401,11 +418,35 @@ namespace CleanArch.Demo.Application.Services
 
             return null;
         }
+        public async Task<CommonResponseDto> AddPermissionToRole(string role, string permission)
+        {
+            var response = new CommonResponseDto
+            {
+                Status = false,
+                Message = "Can't assign role to user"
+            };
+            try
+            {
+                var roleName = await _roleManager.FindByNameAsync(role);
+                var res = await _roleManager.AddClaimAsync(roleName, new Claim("Permission", permission));
+                response.Status = true;
+                response.Message = $"{permission} added to {role} successfully";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
+
+
+        }
 
 
 
 
     }
+
 
 
 

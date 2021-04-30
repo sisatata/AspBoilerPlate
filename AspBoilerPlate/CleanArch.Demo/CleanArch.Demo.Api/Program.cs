@@ -30,7 +30,7 @@ namespace CleanArch.Demo.Api
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await SeedAdminUser.SeedEssentialsAsync(userManager, roleManager);
                   
-                }
+                } 
                 catch (Exception ex)
                 {
                     var logger = loggerFactory.CreateLogger<Program>();
