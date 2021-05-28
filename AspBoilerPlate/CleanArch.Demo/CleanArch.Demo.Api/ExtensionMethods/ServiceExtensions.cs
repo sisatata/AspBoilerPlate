@@ -1,4 +1,5 @@
 ﻿
+using CleanArch.Demo.Api.Services;
 using CleanArch.Demo.Application.Commands.Model;
 using CleanArch.Demo.Application.Interfaces;
 using CleanArch.Demo.Application.Services;
@@ -10,6 +11,7 @@ using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Data.Repository;
 using CleanArch.Demo.Infra.Data.Repository.Course;
+using CleanArch.Demo.Shared.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -46,12 +48,15 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             // services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped(typeof(IAsyncRepository<,>), typeof(EfRepository<,>));
             services.AddScoped(typeof(List<Course>), typeof(List<Course>));
+
             // services.AddTransient<ICourseService, CourseService>();
             // services.AddScoped(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository));
 
             // services.Add(new ServiceDescriptor(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository)));
             services.AddScoped<ICourseRepository, CourseRepository>();
-           
+            services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
+
+
         }
     }
 };

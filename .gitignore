@@ -3,7 +3,7 @@ architectui-angular-free-theme
 *.suo
 *.user
 _ReSharper.*
-bin
+*/bin
 obj
 packages
 AspBoilerPlate/CleanArch.Demo/CleanArch.Demo.Api/bin

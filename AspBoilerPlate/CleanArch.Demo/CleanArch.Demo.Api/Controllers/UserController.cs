@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -72,6 +73,7 @@ namespace CleanArch.Demo.Api.Controllers
         {
             var userName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var user = await _userManager.FindByNameAsync(userName);
+
             return Ok(user);
         }
         [HttpPost("change-password")]
@@ -155,7 +157,13 @@ namespace CleanArch.Demo.Api.Controllers
             var res = await _userService.AddPermissionToRole(role, permission);
             return Ok(res);
         }
-
-
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> GetRefreshTokenAsync(string token)
+        {
+            var refreshToken = Request.Cookies["refreshToken"];
+            var response = await _userService.RefreshTokenAsync(refreshToken);
+            return Ok(response);
         }
+
+    }
 }

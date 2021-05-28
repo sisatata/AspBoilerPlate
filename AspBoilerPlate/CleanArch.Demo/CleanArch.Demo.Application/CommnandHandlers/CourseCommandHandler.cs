@@ -31,8 +31,9 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
             };
             try
             {
-                Course course = new Course();
-                var result =  await _courseRepository.AddAsync(_autoMapper.Map<Course>(request));
+                //  Course course = new Course();
+                var course = _autoMapper.Map<Course>(request);
+                var result = await _courseRepository.AddAsync(course);
                 commonResponseDto.ApplicationId = result.Id;
                 commonResponseDto.Status = true;
                 commonResponseDto.Message = "Entity Successfully Created";

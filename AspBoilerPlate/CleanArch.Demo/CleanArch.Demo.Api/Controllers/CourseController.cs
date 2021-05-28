@@ -36,9 +36,9 @@ namespace CleanArch.Demo.Api.Controllers
         #endregion
         #region methods
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Course course)
+        public async Task<IActionResult> Post([FromBody] CreateCourseCommand course)
         {
-          var data =   await _mediator.Send(new CreateCourseCommand { Description = course.Description, Name = course.Name });
+          var data =   await _mediator.Send(course);
           return Ok(data);
         }
         [HttpGet("{Id}")]
@@ -49,6 +49,7 @@ namespace CleanArch.Demo.Api.Controllers
             return Ok(data);
         }
         [HttpGet("Get-All")]
+        [Authorize]
         public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
         {
             var route = Request.Path.Value;

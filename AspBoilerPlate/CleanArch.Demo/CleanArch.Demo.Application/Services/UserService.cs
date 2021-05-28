@@ -103,27 +103,72 @@ namespace CleanArch.Demo.Application.Services
                     _context.SaveChanges();
                 }
                 // return claims
-                var userRoles = await _userManager.GetRolesAsync(user);
-                IList<Claim> claimsOfUser = new List<Claim> ();
-                List<string> claimListOfUser = new List<string>();
-                foreach (var role in userRoles)
-                {
-                    var roleList = await _roleManager.FindByNameAsync(role);
-                    var claims = await _roleManager.GetClaimsAsync(roleList);
-                    foreach(var claim in claims)
-                    {
-                        if (!claimsOfUser.Contains(claim)){
-                            claimListOfUser.Add(claim.Value.ToString());
-                            claimsOfUser.Add(claim);
-                        }
-                    }
-
-                }
-                authenticationModel.Claims = claimListOfUser;
+                
+                authenticationModel.Permissions = await GetClaims(user);
                 return authenticationModel;
             }
             authenticationModel.IsAuthenticated = false;
             authenticationModel.Message = $"Incorrect Credentials for user {user.Email}.";
+            return authenticationModel;
+        }
+        private async Task<List<string>> GetClaims(ApplicationUser user)
+        {
+            var userRoles = await _userManager.GetRolesAsync(user);
+            IList<Claim> claimsOfUser = new List<Claim>();
+            List<string> claimListOfUser = new List<string>();
+            foreach (var role in userRoles)
+            {
+                var roleList = await _roleManager.FindByNameAsync(role);
+                var claims = await _roleManager.GetClaimsAsync(roleList);
+                foreach (var claim in claims)
+                {
+                    if (!claimsOfUser.Contains(claim))
+                    {
+                        claimListOfUser.Add(claim.Value.ToString());
+                        claimsOfUser.Add(claim);
+                    }
+                }
+
+            }
+            return claimListOfUser;
+        }
+        public async Task<AuthenticationModel> RefreshTokenAsync(string token)
+        {
+            var authenticationModel = new AuthenticationModel();
+            var user =  _context.ApplicationUsers.SingleOrDefault(x=>x.RefreshTokens.Any(y=>y.Token== token));
+            if (user == null)
+            {
+                authenticationModel.IsAuthenticated = false;
+                authenticationModel.Message = $"Token did not match any users.";
+                return authenticationModel;
+            }
+            
+            var refreshToken = user.RefreshTokens.Single(x => x.Token == token);
+            if (!refreshToken.IsActive)
+            {
+                authenticationModel.IsAuthenticated = false;
+                authenticationModel.Message = $"Token Not Active.";
+                return authenticationModel;
+            }
+            //Revoke Current Refresh Token
+            refreshToken.Revoked = DateTime.UtcNow;
+            //Generate new Refresh Token and save to Database
+            var newRefreshToken = CreateRefreshToken();
+            user.RefreshTokens.Add(newRefreshToken);
+            _context.Update(user);
+            _context.SaveChanges();
+            //Generates new jwt
+            authenticationModel.IsAuthenticated = true;
+            JwtSecurityToken jwtSecurityToken = await CreateJwtToken(user);
+            authenticationModel.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            authenticationModel.Email = user.Email;
+            authenticationModel.UserName = user.UserName;
+            var rolesList = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
+            authenticationModel.Roles = rolesList.ToList();
+            authenticationModel.RefreshToken = newRefreshToken.Token;
+           
+            authenticationModel.RefreshTokenExpiration = newRefreshToken.Expires;
+            authenticationModel.Permissions = await GetClaims(user);
             return authenticationModel;
         }
         private async Task<JwtSecurityToken> CreateJwtToken(ApplicationUser user)
@@ -270,6 +315,7 @@ namespace CleanArch.Demo.Application.Services
             var response = new CommonResponseDto
             {
                 Status = false,
+                Message = ""
 
             };
             try
@@ -344,18 +390,7 @@ namespace CleanArch.Demo.Application.Services
 
 
         }
-        /*
-           var allClaims = await roleManager.GetClaimsAsync(role);
-                var allPermissions = Permissions.GeneratePermissionsForModule(module);
-                foreach (var permission in allPermissions)
-                {
-                    if (!allClaims.Any(a => a.Type == "Permission" && a.Value == permission))
-                    {
-                        await roleManager.AddClaimAsync(role, new Claim("Permission", permission));
-                    }
-                }
-
-         */
+        
         public async Task<bool> AssignRole(string userId, string[] roles)
         {
             try
@@ -414,8 +449,6 @@ namespace CleanArch.Demo.Application.Services
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             var res = await _emailSender.SendResetPasswordLink(email, token);
             var link = token;
-
-
             return null;
         }
         public async Task<CommonResponseDto> AddPermissionToRole(string role, string permission)
@@ -437,18 +470,11 @@ namespace CleanArch.Demo.Application.Services
             {
                 throw;
             }
-            
-
-
+         
         }
 
 
-
-
     }
-
-
-
 
 
 }
