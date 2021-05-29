@@ -90,6 +90,7 @@ namespace CleanArch.Demo.Api.Controllers
             return Ok(res);
         }
         [HttpPost("delete-role")]
+        //   [Authorize(Policy = PolicyTypes.Users.EditRole)]
 
         public async Task<IActionResult> DeleteRole(string role)
         {
