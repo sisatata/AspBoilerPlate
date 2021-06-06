@@ -26,10 +26,12 @@ namespace CleanArch.Demo.Api
                 try
                 {
                     //Seed Default Users
+                    var context = services.GetRequiredService<UniversityDBContext>();
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await SeedAdminUser.SeedEssentialsAsync(userManager, roleManager);
-                  
+                    await SeedProducts.SeedAsync(context, loggerFactory);
+
                 } 
                 catch (Exception ex)
                 {

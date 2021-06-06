@@ -27,6 +27,9 @@ namespace CleanArch.Demo.Infra.Data.Context
         public DbSet<Course> Courses { get; set; }
         // ApplicationUser Course UserProfile
 
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductBrand> ProductBrands { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<User> Users { get; set; }
         public bool HasChanges => ChangeTracker.HasChanges();

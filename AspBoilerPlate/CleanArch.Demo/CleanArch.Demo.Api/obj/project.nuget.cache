@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0QNQRSnrLrKh98rHQvC3MRm/ZZIFXhtmjr0NaMNPGu/AMGjMZwpHF8Lr60G6vYrkUAjumkDnDQ37DBQaE3fF+A==",
+  "dgSpecHash": "xEMqT07D32d7sNLAZd3fQ+AqiB4ezO/bsqZHSBKuFMONQZ9Z5yUoytcYfx+zUND1OUFB1M1YFWJDtHcnliEtMg==",
   "success": true,
   "projectFilePath": "E:\\PracticeDotNet\\AspBoilerPlate\\CleanArch.Demo\\CleanArch.Demo.Api\\CleanArch.Demo.Api.csproj",
   "expectedPackageFiles": [
@@ -152,6 +152,7 @@
     "C:\\Users\\SB\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\SB\\.nuget\\packages\\system.text.json\\5.0.2\\system.text.json.5.0.2.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\SB\\.nuget\\packages\\system.threading.channels\\4.5.0\\system.threading.channels.4.5.0.nupkg.sha512",
