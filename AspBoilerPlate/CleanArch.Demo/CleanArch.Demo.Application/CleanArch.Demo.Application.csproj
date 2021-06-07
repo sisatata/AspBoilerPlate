@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="CommnandHandlers\User\" />
+    <Folder Include="QueryHandlers\CourseHandler\NewFolder\" />
   </ItemGroup>
 
 </Project>

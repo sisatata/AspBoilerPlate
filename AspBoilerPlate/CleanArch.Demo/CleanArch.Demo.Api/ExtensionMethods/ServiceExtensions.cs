@@ -11,6 +11,7 @@ using CleanArch.Demo.Infra.Core.Interfaces;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Infra.Data.Repository;
 using CleanArch.Demo.Infra.Data.Repository.Course;
+using CleanArch.Demo.Infra.Data.Repository.Product;
 using CleanArch.Demo.Shared.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -43,6 +44,7 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             });
             //Domain Handlers
             services.AddScoped<IRequestHandler<CreateCourseCommand, CommonResponseDto>, CourseCommandHandler>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddScoped<IUserService, UserService>();
             // services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));

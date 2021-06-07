@@ -1,10 +1,12 @@
 ﻿using CleanArch.Demo.Domain.Interfaces;
 using CleanArch.Demo.Infra.Core.Interfaces;
+using CleanArch.Demo.Infra.Core.Specifications;
 using CleanArch.Demo.Infra.Data.Context;
 using CleanArch.Demo.Shared;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +47,16 @@ namespace CleanArch.Demo.Infra.Data.Repository
             _universityDBContext.Set<T>().Remove(entity);
             await _universityDBContext.SaveChangesAsync();
         }
-       
+        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+        {
+            var query = ApplySpecification(spec);
+            return await query.ToListAsync();
+        }
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQuery(_universityDBContext.Set<T>().AsQueryable(), spec);
+        }
+
+        
     }
 }
