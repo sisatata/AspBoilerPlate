@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Reflection;
 
 namespace CleanArch.Demo.Api.ExtensionMethods
@@ -57,6 +58,8 @@ namespace CleanArch.Demo.Api.ExtensionMethods
             // services.Add(new ServiceDescriptor(typeof(IAsyncCourseRepository<Course, Guid>), typeof(CourseRepository)));
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
+           
+            
 
 
         }

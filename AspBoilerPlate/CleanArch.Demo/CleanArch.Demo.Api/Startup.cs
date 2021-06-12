@@ -22,6 +22,8 @@ using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Application.Services;
 using CleanArch.Demo.Application.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
+using System.Data.Common;
 
 namespace CleanArch.Demo.Api
 {
@@ -65,7 +67,7 @@ namespace CleanArch.Demo.Api
                 var uri = string.Concat(request.Scheme, "://", request.Host.ToUriComponent());
                 return new UriService(uri);
             });
-
+            services.AddScoped<DbConnection>(c => new SqlConnection(Configuration.GetConnectionString("UniversityDBConnection")));
             services.AddDbContext<UniversityDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
