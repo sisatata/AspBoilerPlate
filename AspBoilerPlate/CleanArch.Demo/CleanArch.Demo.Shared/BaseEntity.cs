@@ -8,6 +8,7 @@ namespace CleanArch.Demo.Shared
     {
         public TId Id { get; protected set; }
         public DateTime CreatedTime { get; protected set; }
+        public bool? IsDeleted { get; protected set; }
 
         protected BaseEntity(TId id)
         {

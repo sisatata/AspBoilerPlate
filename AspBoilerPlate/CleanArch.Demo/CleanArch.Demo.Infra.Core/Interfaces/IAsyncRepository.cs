@@ -14,7 +14,7 @@ namespace CleanArch.Demo.Infra.Core.Interfaces
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
        
-        Task<IReadOnlyList<T>> GetAll();
+        Task<IList<T>> GetAll();
     
        
       //  Task<T> GetEntityWithSpec(ISpecification<T> spec);

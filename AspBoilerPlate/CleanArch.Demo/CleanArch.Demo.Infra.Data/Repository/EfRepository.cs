@@ -32,9 +32,9 @@ namespace CleanArch.Demo.Infra.Data.Repository
             return await _universityDBContext.Set<T>().FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> GetAll()
+        public async Task<IList<T>> GetAll()
         {
-            return await _universityDBContext.Set<T>().AsNoTracking().ToListAsync();
+            return await _universityDBContext.Set<T>().AsNoTracking().Where(x=>x.IsDeleted != false).ToListAsync();
         }
 
         public async Task UpdateAsync(T entity)

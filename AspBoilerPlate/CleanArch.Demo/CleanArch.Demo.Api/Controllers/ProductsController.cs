@@ -20,5 +20,12 @@ namespace CleanArch.Demo.Api.Controllers
             var brands = await _mediator.Send(new Application.Queries.ProductQuery.GetAllBrandQuery());
             return Ok(brands);
         }
+
+        [HttpGet("product-types")]
+        public async Task<IActionResult> GetProductTypes()
+        {
+            var types = await _mediator.Send(new Application.Queries.ProductTypeQuery.GetAllTypeQuery());
+            return Ok(new { success = true, data= types});
+        }
     }
 }
