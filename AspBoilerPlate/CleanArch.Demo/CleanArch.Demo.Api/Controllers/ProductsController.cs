@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CleanArch.Demo.Application.ViewModels;
+using CleanArch.Demo.Domain;
+using CleanArch.Demo.Infra.Core.Specifications;
+using CleanArch.Demo.Shared;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +17,23 @@ namespace CleanArch.Demo.Api.Controllers
 
         }
 
-      
+       /* [HttpGet]
+        public async Task<ActionResult<Pagination<ProductDto>>> GetProducts(
+             [FromQuery] ProductSpecParams productParams)
+        {
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
+            // var countSpec = new ProductsWithFiltersForCountSpecification(productParams);
+
+            // var totalItems = await _productsRepo.CountAsync(countSpec);
+
+            //var products = await _productsRepo.ListAsync(spec);
+
+            //var data = _mapper.Map<IReadOnlyList<ProductToReturnDto>>(products);
+
+            //return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex,
+            //  productParams.PageSize, totalItems, data));
+            return null;
+        }*/
         [HttpGet("brands")]
         public async Task<IActionResult> GetBrands()
         {
