@@ -6,7 +6,7 @@ namespace CleanArch.Demo.Shared
 {
    public class Pagination<T> where T : class
     {
-        public Pagination(int pageIndex, int pageSize, int count, IReadOnlyList<T> data)
+        public Pagination(int pageIndex, int pageSize, int count, IList<T> data)
         {
             PageIndex = pageIndex;
             PageSize = pageSize;
@@ -17,6 +17,6 @@ namespace CleanArch.Demo.Shared
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
         public int Count { get; set; }
-        public IReadOnlyList<T> Data { get; set; }
+        public IList<T> Data { get; set; }
     }
 }

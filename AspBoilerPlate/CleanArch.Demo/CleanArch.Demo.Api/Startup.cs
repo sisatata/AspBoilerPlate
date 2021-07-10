@@ -35,10 +35,20 @@ namespace CleanArch.Demo.Api
         }
 
         public IConfiguration Configuration { get; }
+       
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+            services.AddServices();
+            services.AddOptions();
+            services.AddHttpContextAccessor();
+            services.AddMemoryCache();
+            services.Configure<JWT>(Configuration.GetSection("JWT"));
+            services.AddHealthChecks()
+            .AddDbContextCheck<UniversityDBContext>();
+
             services.AddCors(options => {
                 options.AddPolicy("CorsPolicy",
                         builder => builder.AllowAnyOrigin()
@@ -49,13 +59,6 @@ namespace CleanArch.Demo.Api
                             //.AllowCredentials()
                             );
             });
-            services.AddServices();
-            services.AddOptions();
-            services.AddHttpContextAccessor();
-            services.AddMemoryCache();
-            services.Configure<JWT>(Configuration.GetSection("JWT"));
-            services.AddHealthChecks()
-            .AddDbContextCheck<UniversityDBContext>();
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = "localhost:6379";
@@ -144,6 +147,9 @@ namespace CleanArch.Demo.Api
                     options.DisplayRequestDuration();
                 });
             }
+            app.UseCors(
+      options => options.WithOrigins("http://localhost:4200").AllowAnyMethod()
+  );
             app.UseHealthChecks("/health");
 
             app.UseHttpsRedirection();

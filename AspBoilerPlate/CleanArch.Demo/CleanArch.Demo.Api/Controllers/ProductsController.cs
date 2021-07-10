@@ -17,23 +17,15 @@ namespace CleanArch.Demo.Api.Controllers
 
         }
 
-       /* [HttpGet]
-        public async Task<ActionResult<Pagination<ProductDto>>> GetProducts(
+        [HttpGet("products")]
+        public async Task<ActionResult> GetProducts(
              [FromQuery] ProductSpecParams productParams)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
-            // var countSpec = new ProductsWithFiltersForCountSpecification(productParams);
-
-            // var totalItems = await _productsRepo.CountAsync(countSpec);
-
-            //var products = await _productsRepo.ListAsync(spec);
-
-            //var data = _mapper.Map<IReadOnlyList<ProductToReturnDto>>(products);
-
-            //return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex,
-            //  productParams.PageSize, totalItems, data));
-            return null;
-        }*/
+            var products = await _mediator.Send(new Application.Queries.ProductQuery.GetAllProductWithPaginationQuery{ ProductParams = productParams});
+            return Ok(products);
+            
+            
+        }
         [HttpGet("brands")]
         public async Task<IActionResult> GetBrands()
         {

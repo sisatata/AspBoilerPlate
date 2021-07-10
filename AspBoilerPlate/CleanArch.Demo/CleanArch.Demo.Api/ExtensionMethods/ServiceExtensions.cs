@@ -30,8 +30,18 @@ namespace CleanArch.Demo.Api.ExtensionMethods
         {
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>().AddDefaultTokenProviders();
             services.AddMediatR(typeof(CreateCourseCommand).GetTypeInfo().Assembly);
-           
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                        builder => builder.AllowAnyOrigin()
+                            .WithOrigins("http://localhost:4200")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .SetIsOriginAllowed(origin => true)
+                            //.AllowCredentials()
+                            );
+            });
             services.AddControllers();
+            services.AddCors();
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
             // services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);

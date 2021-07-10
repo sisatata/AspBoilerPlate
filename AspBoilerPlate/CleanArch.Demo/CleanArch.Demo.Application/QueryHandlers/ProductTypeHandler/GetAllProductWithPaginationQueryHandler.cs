@@ -5,6 +5,7 @@ using CleanArch.Demo.Application.Queries.ProductTypeQuery.Model;
 using CleanArch.Demo.Domain;
 using CleanArch.Demo.Domain.Models;
 using CleanArch.Demo.Infra.Core.Interfaces;
+using CleanArch.Demo.Shared;
 using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
 using System;
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.QueryHandlers.ProductTypeHandler
 {
-    public class GetAllProductWithPaginationQueryHandler : IRequestHandler<GetAllProductWithPaginationQuery, IList<ProductDto>>
+    public class GetAllProductWithPaginationQueryHandler : IRequestHandler<GetAllProductWithPaginationQuery, Pagination<ProductToReturnDto>>
     {
         private readonly IAsyncRepository<Product, Guid> _productRepository;
         private readonly IMapper _autoMapper;
@@ -25,10 +26,22 @@ namespace CleanArch.Demo.Application.QueryHandlers.ProductTypeHandler
             _productRepository = productRepository;
             _autoMapper = autoMapper;
         }
-        public Task<IList<ProductDto>> Handle(GetAllProductWithPaginationQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ProductToReturnDto>> Handle(GetAllProductWithPaginationQuery request, CancellationToken cancellationToken)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(request.ProductParams);
-            return null;
+            var countSpec = new ProductWithFilterForCountSpecification(request.ProductParams);
+
+            var totalItems = await _productRepository.CountAsync(countSpec);
+
+            var products = await _productRepository.ListAsync(spec);
+
+            var data = _autoMapper.Map<IList<ProductToReturnDto>>(products);
+            var res = new Pagination<ProductToReturnDto>(request.ProductParams.PageIndex, request.ProductParams.PageSize, totalItems, data);
+            return res;
+
+
+
+
         }
     }
 }
