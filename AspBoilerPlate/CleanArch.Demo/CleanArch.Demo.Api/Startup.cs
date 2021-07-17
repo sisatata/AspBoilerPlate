@@ -24,6 +24,7 @@ using CleanArch.Demo.Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Data.SqlClient;
 using System.Data.Common;
+using CleanArch.Demo.Infra.Core.Settings;
 
 namespace CleanArch.Demo.Api
 {
@@ -40,7 +41,15 @@ namespace CleanArch.Demo.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
+            services.AddDistributedMemoryCache();
+            services.AddCoreLayer(Configuration);
+            
+            services.Configure<CacheSettings>(Configuration.GetSection("CacheSettings"));
+
             services.AddServices();
             services.AddOptions();
             services.AddHttpContextAccessor();
@@ -48,7 +57,7 @@ namespace CleanArch.Demo.Api
             services.Configure<JWT>(Configuration.GetSection("JWT"));
             services.AddHealthChecks()
             .AddDbContextCheck<UniversityDBContext>();
-
+            services.AddCors();
             services.AddCors(options => {
                 options.AddPolicy("CorsPolicy",
                         builder => builder.AllowAnyOrigin()
@@ -147,6 +156,7 @@ namespace CleanArch.Demo.Api
                     options.DisplayRequestDuration();
                 });
             }
+            app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
             app.UseCors(
       options => options.WithOrigins("http://localhost:4200").AllowAnyMethod()
   );

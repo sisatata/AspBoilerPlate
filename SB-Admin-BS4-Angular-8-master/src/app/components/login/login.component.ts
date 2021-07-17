@@ -1,7 +1,8 @@
+import { IUserLogin } from './../shared/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { routerTransition } from '../router.animations';
+import { routerTransition } from '../../router.animations';
 import { LoginModel } from './login';
 import { LoginService } from './login.service';
 
@@ -28,9 +29,7 @@ export class LoginComponent implements OnInit {
             password:   ['', [ Validators.required ]]
         });
     }
-    onLoggedin(value:LoginModel) {
-        //localStorage.setItem('isLoggedin', 'true');
-       console.log(value);
+    onLoggedin({ value }: { value: IUserLogin }) {
        this.loginService.login(value).subscribe(res=>{
                   console.log(res); 
        },()=>{})

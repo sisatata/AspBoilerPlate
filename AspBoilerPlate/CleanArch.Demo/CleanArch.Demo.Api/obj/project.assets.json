@@ -2399,7 +2399,14 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "CleanArch.Demo.Shared": "1.0.0",
-          "Dapper": "2.0.78"
+          "Dapper": "2.0.78",
+          "MediatR": "9.0.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
+          "Microsoft.Extensions.Caching.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/CleanArch.Demo.Infra.Core.dll": {}
