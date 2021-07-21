@@ -12,10 +12,10 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CleanArch.Demo.Api.Controllers
+namespace CleanArch.Demo.Api.Controllers.V1
 {
-    [Route("Api/[controller]")]
-
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {

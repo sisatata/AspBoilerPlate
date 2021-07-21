@@ -15,10 +15,10 @@ using CleanArch.Demo.Application.ViewModels;
 using CleanArch.Demo.Shared;
 using CleanArch.Demo.Application.Interfaces;
 
-namespace CleanArch.Demo.Api.Controllers
+namespace CleanArch.Demo.Api.Controllers.V1
 {
-    [Route("Api/[controller]")]
-
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
    
     public class CourseController : BaseController<CourseController>
@@ -49,7 +49,7 @@ namespace CleanArch.Demo.Api.Controllers
             return Ok(data);
         }
         [HttpGet("Get-All")]
-        [Authorize]
+       
         public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
         {
             var route = Request.Path.Value;

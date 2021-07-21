@@ -174,3 +174,4 @@ E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net5.0\ref\CleanArch.Demo.Api.dll
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net5.0\CleanArch.Demo.Api.pdb
 E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\obj\Debug\net5.0\CleanArch.Demo.Api.genruntimeconfig.cache
+E:\PracticeDotNet\AspBoilerPlate\CleanArch.Demo\CleanArch.Demo.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll

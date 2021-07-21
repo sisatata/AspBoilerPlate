@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanArch.Demo.Api.Controllers
+namespace CleanArch.Demo.Api.Controllers.V1
 {
     public abstract class BaseController<T> : ControllerBase
     {
