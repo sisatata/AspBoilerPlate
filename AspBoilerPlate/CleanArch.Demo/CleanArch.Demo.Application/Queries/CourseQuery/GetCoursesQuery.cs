@@ -11,7 +11,7 @@ using System.Text;
 namespace CleanArch.Demo.Application.Queries.CourseQuery
 {
     // if need to cache response plase implement ICacheableMediatrQuery
-    public class GetCoursesQuery : IRequest<CourseDto>, ICacheableMediatrQuery
+    public class GetCoursesQueryV1 : IRequest<CourseDto>, ICacheableMediatrQuery
     {
         public Guid Id { get; set; }
         public bool BypassCache { get; set; }

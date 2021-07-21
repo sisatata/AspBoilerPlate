@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.QueryHandlers.ProductTypeHandler
 {
-    public class GetAllProductWithPaginationQueryHandler : IRequestHandler<GetAllProductWithPaginationQuery, Pagination<ProductToReturnDto>>
+    public class GetAllProductWithPaginationQueryHandler : IRequestHandler<GetAllProductWithPaginationQueryV1, Pagination<ProductToReturnDto>>
     {
         private readonly IAsyncRepository<Product, Guid> _productRepository;
         private readonly IMapper _autoMapper;
@@ -26,7 +26,7 @@ namespace CleanArch.Demo.Application.QueryHandlers.ProductTypeHandler
             _productRepository = productRepository;
             _autoMapper = autoMapper;
         }
-        public async Task<Pagination<ProductToReturnDto>> Handle(GetAllProductWithPaginationQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ProductToReturnDto>> Handle(GetAllProductWithPaginationQueryV1 request, CancellationToken cancellationToken)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(request.ProductParams);
             var countSpec = new ProductWithFilterForCountSpecification(request.ProductParams);

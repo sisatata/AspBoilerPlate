@@ -29,7 +29,7 @@ namespace CleanArch.Demo.Api.ExtensionMethods
         public static void AddServices(this IServiceCollection services)
         {
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<UniversityDBContext>().AddDefaultTokenProviders();
-            services.AddMediatR(typeof(CreateCourseCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CreateCourseCommandV1).GetTypeInfo().Assembly);
             services.AddCors(options => {
                 options.AddPolicy("CorsPolicy",
                         builder => builder.AllowAnyOrigin()
@@ -54,7 +54,7 @@ namespace CleanArch.Demo.Api.ExtensionMethods
                 opt.Lockout.MaxFailedAccessAttempts = 3;
             });
             //Domain Handlers
-            services.AddScoped<IRequestHandler<CreateCourseCommand, CommonResponseDto>, CourseCommandHandler>();
+            services.AddScoped<IRequestHandler<CreateCourseCommandV1, CommonResponseDto>, CourseCommandHandler>();
             services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddScoped<IUserService, UserService>();

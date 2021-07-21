@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CleanArch.Demo.Application.Queries.CourseQuery
 {
-   public class GetAllCourseQuery:  IRequest<PagedResponse<List<CourseDto>>>
+   public class GetAllCourseQueryV1:  IRequest<PagedResponse<List<CourseDto>>>
     {
         public string Path { get; set; }
          public int PageNumber { get; set; }

@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
 {
-    public class GetAllCourseQueryHandler : IRequestHandler<GetAllCourseQuery, PagedResponse<List<CourseDto>>>
+    public class GetAllCourseQueryHandler : IRequestHandler<GetAllCourseQueryV1, PagedResponse<List<CourseDto>>>
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IMapper _autoMapper;
@@ -32,7 +32,7 @@ namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
         }
 
 
-        public async Task<PagedResponse<List<CourseDto>>> Handle(GetAllCourseQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResponse<List<CourseDto>>> Handle(GetAllCourseQueryV1 request, CancellationToken cancellationToken)
         {
             /* var cacheKey = "courseList";
              string serializedCustomerList;

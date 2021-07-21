@@ -23,7 +23,7 @@ namespace CleanArch.Demo.Infra.Ioc
           
 
             //Domain CommonResponseDto
-            services.AddScoped<IRequestHandler<CreateCourseCommand, CommonResponseDto>, CourseCommandHandler>();
+            services.AddScoped<IRequestHandler<CreateCourseCommandV1, CommonResponseDto>, CourseCommandHandler>();
 
             //Infra.Data Layer
             services.AddScoped(typeof(IAsyncRepository<,>), typeof(EfRepository<,>));

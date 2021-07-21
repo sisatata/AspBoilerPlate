@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Domain.CommnandHandlers
 {
-    public class CourseCommandHandler : IRequestHandler<CreateCourseCommand, CommonResponseDto>
+    public class CourseCommandHandler : IRequestHandler<CreateCourseCommandV1, CommonResponseDto>
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IMapper _autoMapper;
@@ -22,7 +22,7 @@ namespace CleanArch.Demo.Domain.CommnandHandlers
             _autoMapper = autoMapper;
         }
 
-        public async Task<CommonResponseDto> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
+        public async Task<CommonResponseDto> Handle(CreateCourseCommandV1 request, CancellationToken cancellationToken)
         {
             var commonResponseDto = new CommonResponseDto
             {

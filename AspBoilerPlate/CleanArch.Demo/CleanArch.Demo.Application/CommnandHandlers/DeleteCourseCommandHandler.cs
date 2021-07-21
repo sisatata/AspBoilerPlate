@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.CommnandHandlers
 {
-   public class DeleteCourseCommandHandler : IRequestHandler<DeleteCourseCommand, CommonResponseDto>
+   public class DeleteCourseCommandHandler : IRequestHandler<DeleteCourseCommandV1, CommonResponseDto>
     {
         private readonly ICourseRepository _courseRepository;
         public DeleteCourseCommandHandler(ICourseRepository courseRepository)
@@ -18,7 +18,7 @@ namespace CleanArch.Demo.Application.CommnandHandlers
             _courseRepository = courseRepository;
         }
 
-        public async Task<CommonResponseDto> Handle(DeleteCourseCommand request, CancellationToken cancellationToken)
+        public async Task<CommonResponseDto> Handle(DeleteCourseCommandV1 request, CancellationToken cancellationToken)
         {
             var response = new CommonResponseDto
             {

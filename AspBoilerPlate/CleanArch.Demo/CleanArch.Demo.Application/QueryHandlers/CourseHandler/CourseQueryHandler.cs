@@ -16,7 +16,7 @@ using System.Linq;
 
 namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
 {
-    public class CourseQueryHandler : IRequestHandler<GetCoursesQuery, CourseDto>
+    public class CourseQueryHandler : IRequestHandler<GetCoursesQueryV1, CourseDto>
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IMapper _autoMapper;
@@ -27,7 +27,7 @@ namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
             _autoMapper = autoMapper;
             _dbConnection = dbConnection;
         }
-        public async Task<CourseDto> Handle(GetCoursesQuery request, CancellationToken cancellationToken)
+        public async Task<CourseDto> Handle(GetCoursesQueryV1 request, CancellationToken cancellationToken)
         {
 
              var result = await _courseRepository.GetCourseById(request.Id);

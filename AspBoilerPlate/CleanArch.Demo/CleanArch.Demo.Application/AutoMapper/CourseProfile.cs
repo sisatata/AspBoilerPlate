@@ -11,7 +11,7 @@ namespace CleanArch.Demo.Application.AutoMapper
     {
         public CourseProfile()
         {
-            CreateMap<CreateCourseCommand, Course>().ReverseMap();
+            CreateMap<CreateCourseCommandV1, Course>().ReverseMap();
         }
     }
 }

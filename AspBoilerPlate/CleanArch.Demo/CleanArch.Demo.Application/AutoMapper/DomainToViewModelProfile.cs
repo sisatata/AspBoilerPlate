@@ -13,7 +13,7 @@ namespace CleanArch.Demo.Application.AutoMapper
         public DomainToViewModelProfile()
         {
             CreateMap<UpdateCourseDto, Course>();
-            CreateMap<CreateCourseCommand, Course>();
+            CreateMap<CreateCourseCommandV1, Course>();
            
             //  CreateMap<CreateCourseCommand, Course>();
         }

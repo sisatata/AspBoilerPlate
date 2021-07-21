@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CleanArch.Demo.Application.Commands
 {
-   public class DeleteCourseCommand : IRequest<CommonResponseDto>
+   public class DeleteCourseCommandV1 : IRequest<CommonResponseDto>
     {
         public Guid Id { get; set; }
     }

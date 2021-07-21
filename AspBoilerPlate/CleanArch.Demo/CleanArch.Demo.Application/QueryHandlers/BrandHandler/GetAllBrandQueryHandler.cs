@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Demo.Application.QueryHandlers.BrandHandler
 {
-    public class GetAllBrandQueryHandler : IRequestHandler<GetAllBrandQuery, List<BrandDto>>
+    public class GetAllBrandQueryHandler : IRequestHandler<GetAllBrandQueryV1, List<BrandDto>>
     {
         private readonly  IAsyncRepository<ProductBrand,Guid> _productBrandRepo;
         private readonly IMapper _autoMapper;
@@ -25,7 +25,7 @@ namespace CleanArch.Demo.Application.QueryHandlers.BrandHandler
             _autoMapper = autoMapper;
 
         }
-        public  async Task<List<BrandDto>> Handle(GetAllBrandQuery request, CancellationToken cancellationToken)
+        public  async Task<List<BrandDto>> Handle(GetAllBrandQueryV1 request, CancellationToken cancellationToken)
         {
             var brands = await _productBrandRepo.GetAll();
             var data = _autoMapper.Map<List<BrandDto>>(brands);

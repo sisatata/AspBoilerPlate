@@ -36,7 +36,7 @@ namespace CleanArch.Demo.Api.Controllers.V1
         #endregion
         #region methods
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateCourseCommand course)
+        public async Task<IActionResult> Post([FromBody] CreateCourseCommandV1 course)
         {
           var data =   await _mediator.Send(course);
           return Ok(data);
@@ -45,7 +45,7 @@ namespace CleanArch.Demo.Api.Controllers.V1
 
         public async Task<IActionResult> GetCourseById(Guid Id)
         {  
-            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetCoursesQuery { Id = Id });
+            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetCoursesQueryV1 { Id = Id });
             return Ok(data);
         }
         [HttpGet("Get-All")]
@@ -54,26 +54,26 @@ namespace CleanArch.Demo.Api.Controllers.V1
         {
             var route = Request.Path.Value;
             var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
-            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetAllCourseQuery{ Path = route, PageNumber= validFilter.PageNumber, PageSize= validFilter.PageSize, UriService = _uriService});
+            var data = await _mediator.Send(new Application.Queries.CourseQuery.GetAllCourseQueryV1{ Path = route, PageNumber= validFilter.PageNumber, PageSize= validFilter.PageSize, UriService = _uriService});
             return Ok(data);
         }
         [HttpPost("delete-course")]
         public async Task<IActionResult> DeleteCourseById(Guid Id)
         {
-            var result = await _mediator.Send(new Application.Commands.DeleteCourseCommand { Id = Id });
+            var result = await _mediator.Send(new Application.Commands.DeleteCourseCommandV1 { Id = Id });
             return Ok(result);
         }
         [HttpPost("hard-delete-course")]
         public async Task<IActionResult> HardDeleteCourseById(Guid Id)
         {
-            var result = await _mediator.Send(new Application.Commands.HardDeleteCourseCommand { Id = Id });
+            var result = await _mediator.Send(new Application.Commands.HardDeleteCourseCommandV1 { Id = Id });
             return Ok(result);
         }
 
         [HttpPut("update-course")]
         public async Task<IActionResult> UpdateCourseById([FromBody] UpdateCourseDto  model)
         {
-            var result = await _mediator.Send(new Application.Commands.UpdateCourseCommand{ Name = model.Name, Description = model.Description , Id=model.Id});
+            var result = await _mediator.Send(new Application.Commands.UpdateCourseCommandV1{ Name = model.Name, Description = model.Description , Id=model.Id});
             return Ok(result);
         }
         #endregion

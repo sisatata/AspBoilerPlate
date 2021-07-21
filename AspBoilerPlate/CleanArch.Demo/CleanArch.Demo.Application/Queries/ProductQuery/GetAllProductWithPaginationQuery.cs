@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CleanArch.Demo.Application.Queries.ProductQuery
 {
-   public class GetAllProductWithPaginationQuery : IRequest<Pagination<ProductToReturnDto>>
+   public class GetAllProductWithPaginationQueryV1 : IRequest<Pagination<ProductToReturnDto>>
     {
         public ProductSpecParams ProductParams { get; set; }
     }

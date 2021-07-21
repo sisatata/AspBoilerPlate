@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CleanArch.Demo.Application.Queries.ProductTypeQuery
 {
-   public class GetAllTypeQuery : IRequest<IList<TypeDto>>, ICacheableMediatrQuery
+   public class GetAllTypeQueryV1 : IRequest<IList<TypeDto>>, ICacheableMediatrQuery
     {
         public int Id { get; set; }
         public bool BypassCache { get; set; }

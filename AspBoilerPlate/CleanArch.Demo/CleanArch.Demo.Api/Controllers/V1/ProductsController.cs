@@ -24,7 +24,7 @@ namespace CleanArch.Demo.Api.Controllers.V1
         public async Task<ActionResult> GetProducts(
              [FromQuery] ProductSpecParams productParams)
         {
-            var products = await _mediator.Send(new Application.Queries.ProductQuery.GetAllProductWithPaginationQuery{ ProductParams = productParams});
+            var products = await _mediator.Send(new Application.Queries.ProductQuery.GetAllProductWithPaginationQueryV1{ ProductParams = productParams});
             return Ok(products);
             
             
@@ -32,14 +32,14 @@ namespace CleanArch.Demo.Api.Controllers.V1
         [HttpGet("brands")]
         public async Task<IActionResult> GetBrands()
         {
-            var brands = await _mediator.Send(new Application.Queries.ProductQuery.GetAllBrandQuery());
+            var brands = await _mediator.Send(new Application.Queries.ProductQuery.GetAllBrandQueryV1());
             return Ok(brands);
         }
 
         [HttpGet("product-types")]
         public async Task<IActionResult> GetProductTypes()
         {
-            var types = await _mediator.Send(new Application.Queries.ProductTypeQuery.GetAllTypeQuery());
+            var types = await _mediator.Send(new Application.Queries.ProductTypeQuery.GetAllTypeQueryV1());
             return Ok(new { success = true, data= types});
         }
     }

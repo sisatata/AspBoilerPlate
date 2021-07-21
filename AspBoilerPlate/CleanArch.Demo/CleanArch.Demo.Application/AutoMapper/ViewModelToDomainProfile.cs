@@ -12,8 +12,8 @@ namespace CleanArch.Demo.Application.AutoMapper
     {
         public ViewModelToDomainProfile()
         {
-            CreateMap<Course, CreateCourseCommand>()
-                .ConstructUsing(c => new CreateCourseCommand());
+            CreateMap<Course, CreateCourseCommandV1>()
+                .ConstructUsing(c => new CreateCourseCommandV1());
 
             CreateMap<Course, UpdateCourseDto>()
                .ConstructUsing(c => new UpdateCourseDto());

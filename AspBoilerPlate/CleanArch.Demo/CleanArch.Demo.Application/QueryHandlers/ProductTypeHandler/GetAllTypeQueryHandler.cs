@@ -15,7 +15,7 @@ using System.Linq;
 namespace CleanArch.Demo.Application.QueryHandlers.ProductTypeQueryHandler
 {
     
-    public class GetAllTypeQueryHandler : IRequestHandler<GetAllTypeQuery, IList<TypeDto>>
+    public class GetAllTypeQueryHandler : IRequestHandler<GetAllTypeQueryV1, IList<TypeDto>>
     {
         private readonly IAsyncRepository<ProductType, Guid> _typeRepo;
         private readonly IMapper _autoMapper;
@@ -25,7 +25,7 @@ namespace CleanArch.Demo.Application.QueryHandlers.ProductTypeQueryHandler
             _typeRepo = typeRepo;
             _autoMapper = autoMapper;
         }
-        public async Task<IList<TypeDto>> Handle(GetAllTypeQuery request, CancellationToken cancellationToken)
+        public async Task<IList<TypeDto>> Handle(GetAllTypeQueryV1 request, CancellationToken cancellationToken)
         {
             IList<ProductType> types = await _typeRepo.GetAll();
             IList<TypeDto> data = _autoMapper.Map<List<TypeDto>>(types);

@@ -9,7 +9,7 @@ using System.Text;
 namespace CleanArch.Demo.Domain.Commands
 {
     [AutoMap(typeof(Course))]
-    public class CreateCourseCommand : IRequest <CommonResponseDto>
+    public class CreateCourseCommandV1 : IRequest <CommonResponseDto>
     {
         public string Name { get; set; }
         public string Description { get; set; }

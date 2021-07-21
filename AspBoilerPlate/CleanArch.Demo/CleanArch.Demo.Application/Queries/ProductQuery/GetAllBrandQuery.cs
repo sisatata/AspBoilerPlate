@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CleanArch.Demo.Application.Queries.ProductQuery
 {
-  public  class GetAllBrandQuery : IRequest<List<BrandDto>>
+  public  class GetAllBrandQueryV1 : IRequest<List<BrandDto>>
     {
 
 
