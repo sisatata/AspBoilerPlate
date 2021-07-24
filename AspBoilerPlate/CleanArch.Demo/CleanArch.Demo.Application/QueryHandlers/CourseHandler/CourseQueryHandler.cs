@@ -3,16 +3,9 @@ using CleanArch.Demo.Application.Queries.CourseQuery;
 using CleanArch.Demo.Application.Queries.CourseQuery.Model;
 using CleanArch.Demo.Domain.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using CleanArch.Demo.Domain.Models;
 using System.Data.Common;
-using Dapper;
-using System.Data;
-using System.Linq;
 
 namespace CleanArch.Demo.Application.QueryHandlers.CourseHandler
 {
